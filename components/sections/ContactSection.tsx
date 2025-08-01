@@ -193,8 +193,7 @@ export default function ContactSection() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <motion.div variants={itemVariants}>
                   <label className="block text-white mb-2 font-semibold">
-                    <User className="w-4 h-4 inline mr-2" />
-                    성함 *
+                    이름 <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="text"
@@ -203,66 +202,77 @@ export default function ContactSection() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-yellow-400 focus:bg-white/20 transition-all"
-                    placeholder="성함을 입력해주세요"
+                    placeholder=""
                   />
                 </motion.div>
 
                 <motion.div variants={itemVariants}>
                   <label className="block text-white mb-2 font-semibold">
-                    <Phone className="w-4 h-4 inline mr-2" />
-                    연락처 *
+                    전화번호 <span className="text-red-400">*</span>
                   </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-yellow-400 focus:bg-white/20 transition-all"
-                    placeholder="연락처를 입력해주세요"
-                  />
+                  <div className="flex space-x-2">
+                    <input
+                      type="tel"
+                      maxLength={3}
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-yellow-400 focus:bg-white/20 transition-all text-center"
+                      placeholder="010"
+                    />
+                    <span className="flex items-center text-white text-xl">-</span>
+                    <input
+                      type="tel"
+                      maxLength={4}
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-yellow-400 focus:bg-white/20 transition-all text-center"
+                      placeholder="1234"
+                    />
+                    <span className="flex items-center text-white text-xl">-</span>
+                    <input
+                      type="tel"
+                      maxLength={4}
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-yellow-400 focus:bg-white/20 transition-all text-center"
+                      placeholder="5678"
+                    />
+                  </div>
                 </motion.div>
 
                 <motion.div variants={itemVariants}>
                   <label className="block text-white mb-2 font-semibold">
-                    <Mail className="w-4 h-4 inline mr-2" />
-                    이메일
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-yellow-400 focus:bg-white/20 transition-all"
-                    placeholder="이메일을 입력해주세요"
-                  />
-                </motion.div>
-
-                <motion.div variants={itemVariants}>
-                  <label className="block text-white mb-2 font-semibold">
-                    <MessageSquare className="w-4 h-4 inline mr-2" />
-                    문의 내용
+                    문의 내용 <span className="text-red-400">*</span>
                   </label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={5}
+                    required
+                    rows={3}
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-yellow-400 focus:bg-white/20 transition-all resize-none"
-                    placeholder="창업 관련 문의사항이나 요청사항을 자유롭게 작성해주세요"
+                    placeholder=""
                   />
                 </motion.div>
 
-                <motion.button
-                  type="submit"
-                  className="w-full px-8 py-4 bg-yellow-500 text-gray-900 text-lg font-bold rounded-lg hover:bg-yellow-400 transition-colors shadow-lg flex items-center justify-center space-x-2"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                <motion.div variants={itemVariants}>
+                  <label className="flex items-start space-x-3 text-white text-sm">
+                    <input
+                      type="checkbox"
+                      required
+                      className="mt-1 w-4 h-4 text-yellow-400 bg-white/10 border border-white/20 rounded focus:ring-yellow-400 focus:ring-2"
+                    />
+                    <span>개인정보 수집 및 이용에 동의합니다.</span>
+                  </label>
+                </motion.div>
+
+                <motion.div
+                  className="text-center"
                   variants={itemVariants}
                 >
-                  <Send className="w-5 h-5" />
-                  <span>상담 신청하기</span>
-                </motion.button>
+                  <motion.button
+                    type="submit"
+                    className="px-12 py-4 bg-yellow-500 text-gray-900 text-lg font-bold rounded-lg hover:bg-yellow-400 transition-colors shadow-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    작성
+                  </motion.button>
+                </motion.div>
               </form>
 
               <motion.p
