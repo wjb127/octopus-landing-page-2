@@ -9,17 +9,17 @@ import ClientOnly from '../ui/ClientOnly'
 const slides = [
   {
     id: 1,
-    background: '/images/b4201f868df71.png',
+    background: 'https://cdn.imweb.me/thumbnail/20240417/129653b5ca2a2.png',
     title: "'쭈편단심'",
     subtitle: '오직 쭈꾸미만을 바라보는 한 조각의 붉은 마음',
-    logo: '/images/3b7f53ca7fee6.png'
+    logo: '/images/b4201f868df71.png'
   },
   {
     id: 2,
-    background: '/images/b4201f868df71.png',
+    background: 'https://cdn.imweb.me/thumbnail/20240417/08a78b19e86a1.png',
     title: '언제나 변함 없는 맛으로',
     subtitle: "'특별함'을 선물하는 식당",
-    logo: '/images/3b7f53ca7fee6.png'
+    logo: '/images/b4201f868df71.png'
   }
 ]
 
