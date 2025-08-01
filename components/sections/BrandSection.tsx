@@ -114,44 +114,6 @@ export default function BrandSection() {
             </motion.div>
           </motion.div>
 
-          {/* Brand Values */}
-          <motion.div
-            className="grid md:grid-cols-3 gap-8 mb-16"
-            variants={containerVariants}
-          >
-            {[
-              {
-                title: "엄선된 재료",
-                description: "신선한 쭈꾸미와 최고급 재료만을 사용합니다",
-                icon: "🦑"
-              },
-              {
-                title: "황금 레시피",
-                description: "10년간 연구개발한 비법 양념과 조리법",
-                icon: "👨‍🍳"
-              },
-              {
-                title: "정성스러운 서비스",
-                description: "고객 한 분 한 분께 정성을 다하는 마음",
-                icon: "❤️"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow"
-                variants={itemVariants}
-                whileHover={{ y: -10 }}
-              >
-                <div className="text-6xl mb-4">{item.icon}</div>
-                <h4 className="text-2xl font-bold text-gray-800 mb-4">
-                  {item.title}
-                </h4>
-                <p className="text-gray-600 leading-relaxed">
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
 
           {/* Brand Story */}
           <motion.div
