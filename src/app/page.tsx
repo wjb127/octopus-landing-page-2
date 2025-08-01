@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import Header from '../../components/layout/Header'
 import Footer from '../../components/layout/Footer'
@@ -14,14 +14,14 @@ import ContactSection from '../../components/sections/ContactSection'
 export default function Home() {
   const [activeSection, setActiveSection] = useState('index')
 
-  const sections = [
+  const sections = useMemo(() => [
     { id: 'index', component: HeroSection },
     { id: 'brand', component: BrandSection },
     { id: '15', component: CompetitiveSection },
     { id: 'menu', component: MenuSection },
     { id: '16', component: FranchiseSection },
     { id: '17', component: ContactSection },
-  ]
+  ], [])
 
   const handleNavigate = (sectionId: string) => {
     const element = document.getElementById(
