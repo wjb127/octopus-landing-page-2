@@ -64,15 +64,15 @@ export default function HeroSection() {
             priority
           />
           <div className="absolute inset-0 bg-black/30" />
-          <div className="relative z-10 h-full flex items-center justify-center">
-            <div className="text-center text-white max-w-4xl mx-auto px-4">
+          <div className="relative z-10 h-full flex items-center">
+            <div className="text-left text-white max-w-4xl mx-auto px-4 lg:px-8">
               <div className="mb-8">
                 <Image
                   src={slides[0].logo}
                   alt="황금쭈꾸미집"
                   width={300}
                   height={120}
-                  className="mx-auto"
+                  className=""
                 />
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
@@ -107,8 +107,8 @@ export default function HeroSection() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 h-full flex items-center justify-center">
-            <div className="text-center text-white max-w-4xl mx-auto px-4">
+          <div className="relative z-10 h-full flex items-center">
+            <div className="text-left text-white max-w-4xl mx-auto px-4 lg:px-8">
               {/* Logo */}
               <motion.div
                 className="mb-8"
@@ -121,7 +121,7 @@ export default function HeroSection() {
                   alt="황금쭈꾸미집"
                   width={300}
                   height={120}
-                  className="mx-auto"
+                  className=""
                 />
               </motion.div>
 
@@ -147,7 +147,7 @@ export default function HeroSection() {
 
               {/* Call to Action */}
               <motion.div
-                className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                className="flex flex-col sm:flex-row items-start gap-4"
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.6 }}
@@ -160,7 +160,7 @@ export default function HeroSection() {
                   창업 문의하기
                 </motion.button>
                 <motion.div
-                  className="flex justify-center sm:justify-start"
+                  className="flex justify-start"
                   whileHover={{ scale: 1.05 }}
                 >
                   <Image

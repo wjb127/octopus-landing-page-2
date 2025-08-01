@@ -33,7 +33,11 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg transition-all duration-300"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white shadow-lg' 
+          : 'bg-transparent'
+      }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -64,7 +68,9 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
                 className={`relative px-4 py-2 text-lg font-medium transition-colors ${
                   activeSection === item.id
                     ? 'text-red-600'
-                    : 'text-gray-700 hover:text-red-600'
+                    : isScrolled 
+                      ? 'text-gray-700 hover:text-red-600'
+                      : 'text-white hover:text-red-300'
                 }`}
                 onClick={() => onNavigate(item.id)}
                 whileHover={{ scale: 1.05 }}
@@ -105,9 +111,9 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
             whileTap={{ scale: 0.95 }}
           >
             {isMobileMenuOpen ? (
-              <X size={24} className="text-gray-700" />
+              <X size={24} className={isScrolled ? "text-gray-700" : "text-white"} />
             ) : (
-              <Menu size={24} className="text-gray-700" />
+              <Menu size={24} className={isScrolled ? "text-gray-700" : "text-white"} />
             )}
           </motion.button>
         </div>
