@@ -39,7 +39,8 @@ export default function Footer() {
     {
       icon: <Phone className="w-5 h-5" />,
       title: '대표 전화',
-      content: '1577-6615'
+      content: '',
+      isImage: true
     },
     {
       icon: <Mail className="w-5 h-5" />,
@@ -161,7 +162,17 @@ export default function Footer() {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">{info.title}</h4>
-                  <p className="text-gray-400 text-sm">{info.content}</p>
+                  {info.isImage ? (
+                    <Image
+                      src="/images/d026e3399a332.png"
+                      alt="전국 가맹문의 1577-6615"
+                      width={150}
+                      height={40}
+                      className="h-8 w-auto"
+                    />
+                  ) : (
+                    <p className="text-gray-400 text-sm">{info.content}</p>
+                  )}
                 </div>
               </div>
             ))}

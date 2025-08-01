@@ -33,9 +33,7 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg transition-all duration-300"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -66,9 +64,7 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
                 className={`relative px-4 py-2 text-lg font-medium transition-colors ${
                   activeSection === item.id
                     ? 'text-red-600'
-                    : isScrolled
-                    ? 'text-gray-800 hover:text-red-600'
-                    : 'text-white hover:text-red-300'
+                    : 'text-gray-700 hover:text-red-600'
                 }`}
                 onClick={() => onNavigate(item.id)}
                 whileHover={{ scale: 1.05 }}
@@ -87,14 +83,19 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
 
           {/* Contact Info */}
           <div className="hidden lg:flex items-center space-x-4">
-            <div className="text-right">
-              <p className={`text-sm ${isScrolled ? 'text-gray-600' : 'text-white/80'}`}>
-                전국 가맹문의
-              </p>
-              <p className={`text-xl font-bold ${isScrolled ? 'text-red-600' : 'text-white'}`}>
-                1577-6615
-              </p>
-            </div>
+            <motion.div
+              className="relative"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Image
+                src="/images/d026e3399a332.png"
+                alt="전국 가맹문의 1577-6615"
+                width={200}
+                height={60}
+                className="h-12 w-auto"
+              />
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -104,9 +105,9 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
             whileTap={{ scale: 0.95 }}
           >
             {isMobileMenuOpen ? (
-              <X size={24} className={isScrolled ? 'text-gray-800' : 'text-white'} />
+              <X size={24} className="text-gray-700" />
             ) : (
-              <Menu size={24} className={isScrolled ? 'text-gray-800' : 'text-white'} />
+              <Menu size={24} className="text-gray-700" />
             )}
           </motion.button>
         </div>

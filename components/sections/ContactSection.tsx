@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, Send, User, MessageSquare } from 'lucide-react'
@@ -33,8 +34,9 @@ export default function ContactSection() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: '전화 문의',
-      content: '1577-6615',
-      description: '평일 09:00 - 18:00'
+      content: '',
+      description: '평일 09:00 - 18:00',
+      isImage: true
     },
     {
       icon: <Mail className="w-6 h-6" />,
@@ -139,9 +141,21 @@ export default function ContactSection() {
                     <h4 className="text-lg font-semibold text-white mb-2">
                       {info.title}
                     </h4>
-                    <p className="text-xl font-bold text-white mb-1">
-                      {info.content}
-                    </p>
+                    {info.isImage ? (
+                      <div className="mb-2">
+                        <Image
+                          src="/images/d026e3399a332.png"
+                          alt="전국 가맹문의 1577-6615"
+                          width={180}
+                          height={50}
+                          className="h-12 w-auto"
+                        />
+                      </div>
+                    ) : (
+                      <p className="text-xl font-bold text-white mb-1">
+                        {info.content}
+                      </p>
+                    )}
                     <p className="text-white/70 text-sm">
                       {info.description}
                     </p>
@@ -272,13 +286,17 @@ export default function ContactSection() {
               황금쭈꾸미집과 함께하는 성공 창업의 기회를 놓치지 마세요
             </p>
             <motion.div
-              className="inline-block text-center p-2 bg-white/10 rounded-xl border border-white/20"
+              className="inline-block text-center p-4 bg-white/10 rounded-xl border border-white/20"
               whileHover={{ scale: 1.05 }}
             >
-              <p className="text-white/80 text-lg">전국 가맹문의</p>
-              <p className="text-4xl md:text-5xl font-bold text-yellow-400">
-                1577-6615
-              </p>
+              <p className="text-white/80 text-lg mb-4">전국 가맹문의</p>
+              <Image
+                src="/images/d026e3399a332.png"
+                alt="전국 가맹문의 1577-6615"
+                width={250}
+                height={80}
+                className="h-20 w-auto mx-auto"
+              />
             </motion.div>
           </motion.div>
         </motion.div>

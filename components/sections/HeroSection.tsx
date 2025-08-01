@@ -160,11 +160,16 @@ export default function HeroSection() {
                   창업 문의하기
                 </motion.button>
                 <motion.div
-                  className="text-center sm:text-left"
+                  className="flex justify-center sm:justify-start"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <p className="text-sm opacity-80">전국 가맹문의</p>
-                  <p className="text-2xl font-bold">1577-6615</p>
+                  <Image
+                    src="/images/d026e3399a332.png"
+                    alt="전국 가맹문의 1577-6615"
+                    width={200}
+                    height={60}
+                    className="h-16 w-auto"
+                  />
                 </motion.div>
               </motion.div>
             </div>
