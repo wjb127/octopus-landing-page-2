@@ -138,14 +138,14 @@ export default function BrandSection() {
               </h3>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
                 황금쭈꾸미집은 대한민국 최고의 쭈꾸미 전문점을 꿈꾸며 시작되었습니다. 
-                오직 쭈꾸미만을 바라보는 '쭈편단심'의 마음으로, 
+                오직 쭈꾸미만을 바라보는 &apos;쭈편단심&apos;의 마음으로, 
                 언제나 변함없는 맛과 특별함을 선사하고자 합니다.
               </p>
               <motion.blockquote
                 className="text-2xl md:text-3xl font-bold text-red-600 italic"
                 variants={itemVariants}
               >
-                "대한민국 쭈꾸미 맛의 기준을 세우다"
+                &ldquo;대한민국 쭈꾸미 맛의 기준을 세우다&rdquo;
               </motion.blockquote>
             </div>
           </motion.div>

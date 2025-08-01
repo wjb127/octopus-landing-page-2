@@ -60,7 +60,7 @@ export default function Home() {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [sections])
 
   return (
     <div className="min-h-screen">
