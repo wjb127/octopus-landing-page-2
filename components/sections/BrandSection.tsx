@@ -137,6 +137,65 @@ export default function BrandSection() {
               </motion.div>
             </div>
           </motion.div>
+
+          {/* First Authenticity Section */}
+          <motion.div
+            className="bg-gray-50 py-20"
+            variants={itemVariants}
+          >
+            <div className="max-w-7xl mx-auto px-4">
+              <motion.div
+                className="grid lg:grid-cols-2 gap-16 items-center"
+                variants={itemVariants}
+              >
+                {/* Left - Octopus Image with Vertical Text */}
+                <motion.div
+                  className="relative"
+                  variants={itemVariants}
+                >
+                  <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                    {/* Octopus Image */}
+                    <Image
+                      src="/images/05a959de74097.png"
+                      alt="황금색 고리의 최상급 쭈꾸미"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Right - Content */}
+                <motion.div
+                  className="space-y-8"
+                  variants={itemVariants}
+                >
+                  {/* Badge */}
+                  <div className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-lg">
+                    첫 번째 진정성
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
+                    황금색 고리의<br />
+                    최상급 쭈꾸미
+                  </h3>
+                  
+                  {/* Content */}
+                  <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+                    <p>
+                      쭈꾸미의 <span className="font-semibold text-yellow-600">황금색 고리</span>는 최상급의 신선도를 의미합니다.
+                    </p>
+                    <p>
+                      맛있는 쭈꾸미는 먹지 않고 보는 것만으로도 구별할 수 있습니다.
+                    </p>
+                    <p>
+                      황금쭈꾸미집은 <span className="font-semibold text-red-600">황금색 고리</span>가 없는 쭈꾸미는 <span className="font-semibold">사용하지 않습니다</span>.
+                    </p>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
