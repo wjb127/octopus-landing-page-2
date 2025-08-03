@@ -16,6 +16,14 @@ export const metadata: Metadata = {
   title: "황금쭈꾸미집 - 대한민국 쭈꾸미 맛의 기준",
   description: "대한민국 쭈꾸미 맛의 기준을 세우다. 전국 가맹문의 1577-6615",
   keywords: "황금쭈꾸미집,황금쭈꾸미집창업,황금쭈꾸미창업,쭈꾸미맛집,쭈꾸미전문점,쭈꾸미프랜차이즈",
+  icons: {
+    icon: [
+      { url: '/favicon.png' },
+      { url: '/favicon.ico' }
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({

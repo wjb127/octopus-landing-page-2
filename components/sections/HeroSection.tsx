@@ -9,16 +9,18 @@ import ClientOnly from '../ui/ClientOnly'
 const slides = [
   {
     id: 1,
-    background: '/images/5ee1f4de0f2bb.jpg',
+    background: '/images/08a78b19e86a1.png',
     title: "'쭈편단심'",
     subtitle: '오직 쭈꾸미만을 바라보는 한 조각의 붉은 마음',
+    description: '음식의 맛에 진정성을 담은 만큼,\n황금쭈꾸미집의 매출과 수익은 높아지고 있습니다.',
     logo: '/images/b4201f868df71.png'
   },
   {
     id: 2,
-    background: '/images/333a18a6bd0a2.jpg',
+    background: '/images/129653b5ca2a2.png',
     title: '언제나 변함 없는 맛으로',
     subtitle: "'특별함'을 선물하는 식당",
+    description: '흔한 쭈꾸미 전문점과는 다른 프랜차이즈의 특별함으로\n황금쭈꾸미집에서 성공 창업을 선물하겠습니다.',
     logo: '/images/b4201f868df71.png'
   }
 ]
@@ -65,7 +67,7 @@ export default function HeroSection() {
           />
           <div className="absolute inset-0 bg-black/30" />
           <div className="relative z-10 h-full flex items-center">
-            <div className="text-left text-white max-w-4xl mx-auto px-4 lg:px-8">
+            <div className="text-left text-white max-w-4xl ml-8 lg:ml-16 px-4 lg:px-8">
               <div className="mb-8">
                 <Image
                   src={slides[0].logo}
@@ -78,9 +80,14 @@ export default function HeroSection() {
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 {slides[0].title}
               </h1>
-              <p className="text-xl md:text-2xl lg:text-3xl font-light mb-12">
+              <p className="text-xl md:text-2xl lg:text-3xl font-light mb-8">
                 {slides[0].subtitle}
               </p>
+              {slides[0].description && (
+                <p className="text-lg md:text-xl font-light mb-12 leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
+                  {slides[0].description}
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -108,7 +115,7 @@ export default function HeroSection() {
 
           {/* Content */}
           <div className="relative z-10 h-full flex items-center">
-            <div className="text-left text-white max-w-4xl mx-auto px-4 lg:px-8">
+            <div className="text-left text-white max-w-4xl ml-8 lg:ml-16 px-4 lg:px-8">
               {/* Logo */}
               <motion.div
                 className="mb-8"
@@ -137,13 +144,26 @@ export default function HeroSection() {
 
               {/* Subtitle */}
               <motion.p
-                className="text-xl md:text-2xl lg:text-3xl font-light mb-12"
+                className="text-xl md:text-2xl lg:text-3xl font-light mb-8"
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.6 }}
               >
                 {slides[currentSlide].subtitle}
               </motion.p>
+
+              {/* Description */}
+              {slides[currentSlide].description && (
+                <motion.p
+                  className="text-lg md:text-xl font-light mb-12 leading-relaxed"
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.8, duration: 0.6 }}
+                  style={{ whiteSpace: 'pre-line' }}
+                >
+                  {slides[currentSlide].description}
+                </motion.p>
+              )}
 
               {/* Call to Action */}
               <motion.div
