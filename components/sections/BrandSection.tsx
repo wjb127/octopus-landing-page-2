@@ -196,6 +196,65 @@ export default function BrandSection() {
               </motion.div>
             </div>
           </motion.div>
+
+          {/* Second Authenticity Section */}
+          <motion.div
+            className="bg-white py-20"
+            variants={itemVariants}
+          >
+            <div className="max-w-7xl mx-auto px-4">
+              <motion.div
+                className="grid lg:grid-cols-2 gap-16 items-center"
+                variants={itemVariants}
+              >
+                {/* Left - Content */}
+                <motion.div
+                  className="space-y-8"
+                  variants={itemVariants}
+                >
+                  {/* Badge */}
+                  <div className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-lg">
+                    두 번째 진정성
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
+                    건강한 재료로<br />
+                    숙성된 특제양념
+                  </h3>
+                  
+                  {/* Content */}
+                  <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+                    <p>
+                      최상급 쭈꾸미와 <span className="font-semibold text-red-600">46시간 숙성</span>시킨 맛있게 매운 특제소스를
+                    </p>
+                    <p>
+                      <span className="font-semibold">배합 24시간 숙성</span>, 총 <span className="font-semibold text-red-600">70시간의 숙성 과정</span>을 거쳐 양배추, 대파와
+                    </p>
+                    <p>
+                      함께 철판에 볶아낸 <span className="font-semibold">쭈꾸미 본연의 맛</span>을 느낄 수 있습니다.
+                    </p>
+                  </div>
+                </motion.div>
+
+                {/* Right - Cooked Octopus Image with Vertical Text */}
+                <motion.div
+                  className="relative"
+                  variants={itemVariants}
+                >
+                  <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                    {/* Cooked Octopus Image */}
+                    <Image
+                      src="/images/3738797c89abf.png"
+                      alt="건강한 재료로 숙성된 특제양념"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
