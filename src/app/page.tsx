@@ -6,6 +6,7 @@ import Header from '../../components/layout/Header'
 import Footer from '../../components/layout/Footer'
 import HeroSection from '../../components/sections/HeroSection'
 import BrandSection from '../../components/sections/BrandSection'
+import StoreAtmosphereSection from '../../components/sections/StoreAtmosphereSection'
 import MenuSection from '../../components/sections/MenuSection'
 import FranchiseSection from '../../components/sections/FranchiseSection'
 import ContactSection from '../../components/sections/ContactSection'
@@ -74,6 +75,11 @@ export default function Home() {
         {/* Brand Section */}
         <div id="brand">
           <BrandSection />
+        </div>
+
+        {/* Store Atmosphere Section */}
+        <div id="store-atmosphere">
+          <StoreAtmosphereSection />
         </div>
 
         {/* Menu Section */}
