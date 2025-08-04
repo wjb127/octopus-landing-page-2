@@ -6,7 +6,6 @@ import Header from '../../components/layout/Header'
 import Footer from '../../components/layout/Footer'
 import HeroSection from '../../components/sections/HeroSection'
 import BrandSection from '../../components/sections/BrandSection'
-import CompetitiveSection from '../../components/sections/CompetitiveSection'
 import MenuSection from '../../components/sections/MenuSection'
 import FranchiseSection from '../../components/sections/FranchiseSection'
 import ContactSection from '../../components/sections/ContactSection'
@@ -18,7 +17,6 @@ export default function Home() {
   const sections = useMemo(() => [
     { id: 'index', component: HeroSection },
     { id: 'brand', component: BrandSection },
-    { id: '15', component: CompetitiveSection },
     { id: 'menu', component: MenuSection },
     { id: '16', component: FranchiseSection },
     { id: '17', component: ContactSection },
@@ -26,7 +24,7 @@ export default function Home() {
 
   const handleNavigate = (sectionId: string) => {
     const element = document.getElementById(
-      sectionId === 'index' ? 'hero' : sectionId === '15' ? 'competitive' : sectionId === '16' ? 'franchise' : sectionId === '17' ? 'contact' : sectionId
+      sectionId === 'index' ? 'hero' : sectionId === '16' ? 'franchise' : sectionId === '17' ? 'contact' : sectionId
     )
     
     if (element) {
@@ -46,7 +44,7 @@ export default function Home() {
       const scrollPosition = window.scrollY + 100
 
       sections.forEach(({ id }) => {
-        const elementId = id === 'index' ? 'hero' : id === '15' ? 'competitive' : id === '16' ? 'franchise' : id === '17' ? 'contact' : id
+        const elementId = id === 'index' ? 'hero' : id === '16' ? 'franchise' : id === '17' ? 'contact' : id
         const element = document.getElementById(elementId)
         
         if (element) {
@@ -76,11 +74,6 @@ export default function Home() {
         {/* Brand Section */}
         <div id="brand">
           <BrandSection />
-        </div>
-
-        {/* Competitive Section */}
-        <div id="competitive">
-          <CompetitiveSection />
         </div>
 
         {/* Menu Section */}
