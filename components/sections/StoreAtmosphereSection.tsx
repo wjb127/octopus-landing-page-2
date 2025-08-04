@@ -17,7 +17,7 @@ export default function StoreAtmosphereSection() {
       alt: "황금쭈꾸미집 매장 내부"
     },
     {
-      src: "/images/store-night-exterior.png?v=" + Date.now(), // 야간 매장 외관 이미지 (캐시 방지)
+      src: "/images/store-night-exterior.png", // 야간 매장 외관 이미지
       alt: "황금쭈꾸미집 야간 매장 외관"
     },
     {

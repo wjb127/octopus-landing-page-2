@@ -11,6 +11,7 @@ import MenuSection from '../../components/sections/MenuSection'
 import FranchiseSection from '../../components/sections/FranchiseSection'
 import ContactSection from '../../components/sections/ContactSection'
 import BottomContactForm from '../../components/ui/BottomContactForm'
+import FixedBottomForm from '../../components/ui/FixedBottomForm'
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('index')
@@ -103,9 +104,12 @@ export default function Home() {
       {/* Bottom Contact Form */}
       <BottomContactForm />
 
+      {/* Fixed Bottom Form */}
+      <FixedBottomForm />
+
       {/* Scroll to Top Button */}
       <motion.button
-        className="fixed bottom-6 left-6 w-12 h-12 bg-red-600 text-white rounded-full shadow-lg hover:bg-red-700 transition-colors z-40"
+        className="fixed bottom-24 left-6 w-12 h-12 bg-red-600 text-white rounded-full shadow-lg hover:bg-red-700 transition-colors z-40"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
