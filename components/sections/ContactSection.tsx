@@ -43,18 +43,6 @@ export default function ContactSection() {
       title: '이메일 문의',
       content: 'info@24khouses.com',
       description: '24시간 접수 가능'
-    },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: '본사 위치',
-      content: '서울특별시 강남구',
-      description: '방문 상담 가능'
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: '상담 시간',
-      content: '평일 09:00 - 18:00',
-      description: '토요일 09:00 - 15:00'
     }
   ]
 
@@ -121,67 +109,7 @@ export default function ContactSection() {
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Info */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-3xl font-bold text-white mb-8">
-                연락처 정보
-              </h3>
-              
-              <div className="grid sm:grid-cols-2 gap-6 mb-12">
-                {contactInfo.map((info, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
-                  >
-                    <div className="text-yellow-400 mb-4">
-                      {info.icon}
-                    </div>
-                    <h4 className="text-lg font-semibold text-white mb-2">
-                      {info.title}
-                    </h4>
-                    {info.isImage ? (
-                      <div className="mb-2">
-                        <Image
-                          src="/images/d026e3399a332.png"
-                          alt="전국 가맹문의 1577-6615"
-                          width={180}
-                          height={50}
-                          className="h-12 w-auto"
-                        />
-                      </div>
-                    ) : (
-                      <p className="text-xl font-bold text-white mb-1">
-                        {info.content}
-                      </p>
-                    )}
-                    <p className="text-white/70 text-sm">
-                      {info.description}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Special Offer */}
-              <motion.div
-                className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl p-8 text-center"
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
-              >
-                <h4 className="text-2xl font-bold text-white mb-4">
-                  🎉 창업 지원 혜택
-                </h4>
-                <ul className="text-white space-y-2 mb-6">
-                  <li>✓ 무료 상권 분석</li>
-                  <li>✓ 인테리어 설계 지원</li>
-                  <li>✓ 초기 마케팅 지원</li>
-                  <li>✓ 6개월 운영 컨설팅</li>
-                </ul>
-                <p className="text-lg font-semibold">
-                  지금 상담 신청 시 모든 혜택 제공!
-                </p>
-              </motion.div>
             </motion.div>
 
             {/* Contact Form */}
@@ -284,31 +212,6 @@ export default function ContactSection() {
             </motion.div>
           </div>
 
-          {/* Final CTA */}
-          <motion.div
-            className="text-center mt-16 pt-16 border-t border-white/20"
-            variants={itemVariants}
-          >
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              지금 바로 시작하세요!
-            </h3>
-            <p className="text-xl text-white/90 mb-8">
-              황금쭈꾸미집과 함께하는 성공 창업의 기회를 놓치지 마세요
-            </p>
-            <motion.div
-              className="inline-block text-center p-4 bg-white/10 rounded-xl border border-white/20"
-              whileHover={{ scale: 1.05 }}
-            >
-              <p className="text-white/80 text-lg mb-4">전국 가맹문의</p>
-              <Image
-                src="/images/d026e3399a332.png"
-                alt="전국 가맹문의 1577-6615"
-                width={250}
-                height={80}
-                className="h-20 w-auto mx-auto"
-              />
-            </motion.div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

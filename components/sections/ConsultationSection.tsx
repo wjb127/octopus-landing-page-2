@@ -268,10 +268,10 @@ export default function ConsultationSection() {
             {/* 하단 안내 */}
             <div className="text-center mt-8">
               <p className="text-sm text-gray-600">
-                * 개인정보 취급방침에 동의한 경우에 한하여
+                * 사이트 하단의 입력폼으로 문의 시
               </p>
               <p className="text-sm text-gray-600">
-                개인정보를 수집 및 이용하여 응답합니다. 자세한 내용은 개인정보 취급방침을 참고해주세요.
+                개인정보 수집 및 이용에 동의한 것으로 간주됩니다.
               </p>
             </div>
           </div>
