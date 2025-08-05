@@ -7,6 +7,10 @@ import Footer from '../../components/layout/Footer'
 import HeroSection from '../../components/sections/HeroSection'
 import BrandSection from '../../components/sections/BrandSection'
 import StoreAtmosphereSection from '../../components/sections/StoreAtmosphereSection'
+import PhilosophySection from '../../components/sections/PhilosophySection'
+import CompetitiveAdvantageSection from '../../components/sections/CompetitiveAdvantageSection'
+import ProfitAnalysisSection from '../../components/sections/ProfitAnalysisSection'
+import SuccessFormulaSection from '../../components/sections/SuccessFormulaSection'
 import MenuSection from '../../components/sections/MenuSection'
 import FranchiseSection from '../../components/sections/FranchiseSection'
 import ContactSection from '../../components/sections/ContactSection'
@@ -81,6 +85,26 @@ export default function Home() {
         {/* Store Atmosphere Section */}
         <div id="store-atmosphere">
           <StoreAtmosphereSection />
+        </div>
+
+        {/* Philosophy Section */}
+        <div id="philosophy">
+          <PhilosophySection />
+        </div>
+
+        {/* Competitive Advantage Section */}
+        <div id="competitive-advantage">
+          <CompetitiveAdvantageSection />
+        </div>
+
+        {/* Profit Analysis Section */}
+        <div id="profit-analysis">
+          <ProfitAnalysisSection />
+        </div>
+
+        {/* Success Formula Section */}
+        <div id="success-formula">
+          <SuccessFormulaSection />
         </div>
 
         {/* Menu Section */}
