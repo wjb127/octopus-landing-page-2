@@ -35,29 +35,6 @@ export default function Footer() {
     }
   ]
 
-  const contactInfo = [
-    {
-      icon: <Phone className="w-5 h-5" />,
-      title: '대표 전화',
-      content: '',
-      isImage: true
-    },
-    {
-      icon: <Mail className="w-5 h-5" />,
-      title: '이메일',
-      content: 'info@24khouses.com'
-    },
-    {
-      icon: <MapPin className="w-5 h-5" />,
-      title: '본사 주소',
-      content: '서울특별시 강남구'
-    },
-    {
-      icon: <Clock className="w-5 h-5" />,
-      title: '상담 시간',
-      content: '평일 09:00-18:00'
-    }
-  ]
 
   const socialLinks = [
     { icon: <Facebook className="w-5 h-5" />, href: '#', name: 'Facebook' },

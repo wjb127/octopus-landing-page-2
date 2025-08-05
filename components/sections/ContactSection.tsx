@@ -1,10 +1,8 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock, Send, User, MessageSquare } from 'lucide-react'
 
 export default function ContactSection() {
   const ref = useRef(null)
@@ -30,21 +28,6 @@ export default function ContactSection() {
     })
   }
 
-  const contactInfo = [
-    {
-      icon: <Phone className="w-6 h-6" />,
-      title: '전화 문의',
-      content: '',
-      description: '평일 09:00 - 18:00',
-      isImage: true
-    },
-    {
-      icon: <Mail className="w-6 h-6" />,
-      title: '이메일 문의',
-      content: 'info@24khouses.com',
-      description: '24시간 접수 가능'
-    }
-  ]
 
   const containerVariants = {
     hidden: { opacity: 0 },

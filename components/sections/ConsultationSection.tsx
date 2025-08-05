@@ -9,6 +9,11 @@ export default function ConsultationSection() {
     phone: '',
     message: ''
   })
+  const [phoneData, setPhoneData] = useState({
+    part1: '',
+    part2: '',
+    part3: ''
+  })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
 
@@ -94,7 +99,7 @@ export default function ConsultationSection() {
                   <h4 className="font-semibold text-gray-800 mb-2">개인정보 수집 및 이용 동의</h4>
                   <div className="text-xs text-gray-600 bg-gray-50 p-4 rounded max-h-40 overflow-y-auto leading-relaxed">
                     <p className="mb-3">
-                      회사명(이하 '회사'라 한다)는 개인정보 보호법 제30조에 따라 정보 주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 
+                      회사명(이하 &lsquo;회사&rsquo;라 한다)는 개인정보 보호법 제30조에 따라 정보 주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 
                       원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리지침을 수립, 공개합니다.
                     </p>
                     
