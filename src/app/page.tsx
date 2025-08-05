@@ -14,6 +14,7 @@ import SuccessFormulaSection from '../../components/sections/SuccessFormulaSecti
 import MenuSection from '../../components/sections/MenuSection'
 import FranchiseSection from '../../components/sections/FranchiseSection'
 import ContactSection from '../../components/sections/ContactSection'
+import ConsultationSection from '../../components/sections/ConsultationSection'
 import BottomContactForm from '../../components/ui/BottomContactForm'
 import FixedBottomForm from '../../components/ui/FixedBottomForm'
 
@@ -120,6 +121,11 @@ export default function Home() {
         {/* Contact Section */}
         <div id="contact">
           <ContactSection />
+        </div>
+
+        {/* Consultation Section */}
+        <div id="consultation">
+          <ConsultationSection />
         </div>
       </main>
 
