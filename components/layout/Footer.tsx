@@ -150,77 +150,15 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Contact Information */}
-          <motion.div
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 p-8 bg-gray-800 rounded-xl"
-            variants={itemVariants}
-          >
-            {contactInfo.map((info, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <div className="text-red-500 mt-1">
-                  {info.icon}
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">{info.title}</h4>
-                  {info.isImage ? (
-                    <Image
-                      src="/images/d026e3399a332.png"
-                      alt="전국 가맹문의 1577-6615"
-                      width={150}
-                      height={40}
-                      className="h-8 w-auto"
-                    />
-                  ) : (
-                    <p className="text-gray-400 text-sm">{info.content}</p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </motion.div>
 
-          {/* Call to Action */}
-          <motion.div
-            className="text-center bg-gradient-to-r from-red-600 to-red-700 rounded-xl p-8 mb-12"
-            variants={itemVariants}
-          >
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              지금 바로 창업 상담을 신청하세요!
-            </h3>
-            <p className="text-xl mb-6 opacity-90">
-              전문 상담사가 성공적인 창업을 위해 도움을 드립니다
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <motion.button
-                className="px-8 py-3 bg-white text-red-600 font-bold rounded-full hover:bg-gray-100 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                온라인 상담 신청
-              </motion.button>
-              <div className="text-center">
-                <p className="text-sm opacity-80">전국 가맹문의</p>
-                <p className="text-2xl font-bold">1577-6615</p>
-              </div>
-            </div>
-          </motion.div>
 
           {/* Bottom Footer */}
           <motion.div
-            className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
+            className="pt-8 border-t border-gray-800"
             variants={itemVariants}
           >
-            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 mb-4 md:mb-0">
-              <p className="text-gray-400">
-                © 2024 황금쭈꾸미집. All rights reserved.
-              </p>
+            <div className="flex flex-col md:flex-row items-start space-y-2 md:space-y-0 md:space-x-6 mb-4">
               <div className="flex space-x-4 text-sm">
-                <motion.a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  개인정보처리방침
-                </motion.a>
                 <motion.a
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -233,13 +171,15 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white transition-colors"
                   whileHover={{ scale: 1.05 }}
                 >
-                  사업자정보
+                  개인정보처리방침
                 </motion.a>
               </div>
             </div>
             
-            <div className="text-gray-400 text-sm">
-              <p>사업자등록번호: 123-45-67890</p>
+            <div className="text-gray-400 text-sm space-y-1">
+              <p>사업자번호 : 754-88-01536   |   대표 : 유지원</p>
+              <p>주소 : 대구광역시 수성구 청수로9길 39, 1층(중동)</p>
+              <p>대표번호 & 창업문의 : 1577-6615</p>
             </div>
           </motion.div>
         </div>
