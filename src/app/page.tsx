@@ -13,6 +13,7 @@ import ProfitAnalysisSection from '../../components/sections/ProfitAnalysisSecti
 import SuccessFormulaSection from '../../components/sections/SuccessFormulaSection'
 import MenuSection from '../../components/sections/MenuSection'
 import FranchiseSection from '../../components/sections/FranchiseSection'
+import GallerySection from '../../components/sections/GallerySection'
 import ConsultationSection from '../../components/sections/ConsultationSection'
 import BottomContactForm from '../../components/ui/BottomContactForm'
 import FixedBottomForm from '../../components/ui/FixedBottomForm'
@@ -114,6 +115,11 @@ export default function Home() {
         {/* Franchise Section */}
         <div id="franchise">
           <FranchiseSection />
+        </div>
+
+        {/* Gallery Section */}
+        <div id="gallery">
+          <GallerySection />
         </div>
 
         {/* Consultation Section */}
