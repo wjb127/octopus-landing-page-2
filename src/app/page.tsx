@@ -11,6 +11,8 @@ import PhilosophySection from '../../components/sections/PhilosophySection'
 import CompetitiveAdvantageSection from '../../components/sections/CompetitiveAdvantageSection'
 import ProfitAnalysisSection from '../../components/sections/ProfitAnalysisSection'
 import SuccessFormulaSection from '../../components/sections/SuccessFormulaSection'
+import MainMenuSection from '../../components/sections/MainMenuSection'
+import SignatureMenuSection from '../../components/sections/SignatureMenuSection'
 import MenuSection from '../../components/sections/MenuSection'
 import InterludeSection from '../../components/sections/InterludeSection'
 import FranchiseSection from '../../components/sections/FranchiseSection'
@@ -106,6 +108,16 @@ export default function Home() {
         {/* Success Formula Section */}
         <div id="success-formula">
           <SuccessFormulaSection />
+        </div>
+
+        {/* Main Menu Section */}
+        <div id="main-menu">
+          <MainMenuSection />
+        </div>
+
+        {/* Signature Menu Section */}
+        <div id="signature-menu">
+          <SignatureMenuSection />
         </div>
 
         {/* Menu Section */}
