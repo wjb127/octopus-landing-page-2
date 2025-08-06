@@ -12,6 +12,7 @@ import CompetitiveAdvantageSection from '../../components/sections/CompetitiveAd
 import ProfitAnalysisSection from '../../components/sections/ProfitAnalysisSection'
 import SuccessFormulaSection from '../../components/sections/SuccessFormulaSection'
 import MenuSection from '../../components/sections/MenuSection'
+import InterludeSection from '../../components/sections/InterludeSection'
 import FranchiseSection from '../../components/sections/FranchiseSection'
 import GallerySection from '../../components/sections/GallerySection'
 import ConsultationSection from '../../components/sections/ConsultationSection'
@@ -110,6 +111,11 @@ export default function Home() {
         {/* Menu Section */}
         <div id="menu">
           <MenuSection />
+        </div>
+
+        {/* Interlude Section */}
+        <div id="interlude">
+          <InterludeSection />
         </div>
 
         {/* Franchise Section */}
