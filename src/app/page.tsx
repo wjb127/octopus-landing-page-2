@@ -11,6 +11,11 @@ import PhilosophySection from '../../components/sections/PhilosophySection'
 import CompetitiveAdvantageSection from '../../components/sections/CompetitiveAdvantageSection'
 import ProfitAnalysisSection from '../../components/sections/ProfitAnalysisSection'
 import SuccessFormulaSection from '../../components/sections/SuccessFormulaSection'
+import FranchiseSystemSection from '../../components/sections/FranchiseSystemSection'
+import EducationSection from '../../components/sections/EducationSection'
+import AuthenticitySection from '../../components/sections/AuthenticitySection'
+import QualitySection from '../../components/sections/QualitySection'
+import BrandIntroSection from '../../components/sections/BrandIntroSection'
 import MainMenuSection from '../../components/sections/MainMenuSection'
 import SignatureMenuSection from '../../components/sections/SignatureMenuSection'
 import MenuSection from '../../components/sections/MenuSection'
@@ -108,6 +113,31 @@ export default function Home() {
         {/* Success Formula Section */}
         <div id="success-formula">
           <SuccessFormulaSection />
+        </div>
+
+        {/* Franchise System Section */}
+        <div id="franchise-system">
+          <FranchiseSystemSection />
+        </div>
+
+        {/* Education Section */}
+        <div id="education">
+          <EducationSection />
+        </div>
+
+        {/* Authenticity Section */}
+        <div id="authenticity">
+          <AuthenticitySection />
+        </div>
+
+        {/* Quality Section */}
+        <div id="quality">
+          <QualitySection />
+        </div>
+
+        {/* Brand Intro Section */}
+        <div id="brand-intro">
+          <BrandIntroSection />
         </div>
 
         {/* Main Menu Section */}
