@@ -156,6 +156,234 @@ export default function FranchiseSystemSection() {
                   </p>
                 </motion.div>
               </motion.div>
+              
+              {/* 02 가맹교육 섹션 */}
+              <motion.div 
+                className="mt-16"
+                initial="hidden"
+                whileInView="visible" 
+                viewport={{ once: true, amount: 0.3 }}
+                variants={containerVariants}
+              >
+                <motion.div className="mb-8" variants={itemVariants}>
+                  <div className="flex items-center mb-4">
+                    <span className="text-4xl font-bold text-red-600 mr-4">02</span>
+                    <h4 className="text-2xl font-bold text-gray-800">가맹교육</h4>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-gray-600 text-sm">10년간 쌓아온 데이터 기반의 운영 관리메뉴얼로</p>
+                    <p className="text-gray-600 text-sm">효율적이고 전문적인 관리 능력 향상을 이끌어갑니다.</p>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="grid md:grid-cols-3 gap-8"
+                  variants={containerVariants}
+                >
+                  <motion.div className="text-center" variants={itemVariants}>
+                    <div className="relative w-32 h-32 mx-auto mb-4">
+                      <div className="w-full h-full rounded-full border-4 border-yellow-400 overflow-hidden">
+                        <Image
+                          src="/images/education-1.jpg"
+                          alt="체계적인 교육 시스템"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-white text-sm font-semibold bg-gray-800 bg-opacity-80 p-2 rounded">
+                      체계적인<br />
+                      교육 시스템
+                    </p>
+                  </motion.div>
+
+                  <motion.div className="text-center" variants={itemVariants}>
+                    <div className="relative w-32 h-32 mx-auto mb-4">
+                      <div className="w-full h-full rounded-full border-4 border-yellow-400 overflow-hidden">
+                        <Image
+                          src="/images/education-2.jpg"
+                          alt="실무 중심 교육"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-white text-sm font-semibold bg-gray-800 bg-opacity-80 p-2 rounded">
+                      실무 중심<br />
+                      교육
+                    </p>
+                  </motion.div>
+
+                  <motion.div className="text-center" variants={itemVariants}>
+                    <div className="relative w-32 h-32 mx-auto mb-4">
+                      <div className="w-full h-full rounded-full border-4 border-yellow-400 overflow-hidden">
+                        <Image
+                          src="/images/education-3.jpg"
+                          alt="지속적인 관리"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-white text-sm font-semibold bg-gray-800 bg-opacity-80 p-2 rounded">
+                      지속적인<br />
+                      관리
+                    </p>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+
+              {/* 03 상생전략 섹션 */}
+              <motion.div 
+                className="mt-16"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={containerVariants}
+              >
+                <motion.div className="mb-8" variants={itemVariants}>
+                  <div className="flex items-center mb-4">
+                    <span className="text-4xl font-bold text-red-600 mr-4">03</span>
+                    <h4 className="text-2xl font-bold text-gray-800">상생전략</h4>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-gray-600 text-sm">본사와 가맹점간의 지속적인 소통으로,</p>
+                    <p className="text-gray-600 text-sm">각 점포별 애로사항 파악 및 해결방안을 제시합니다.</p>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="grid md:grid-cols-3 gap-8"
+                  variants={containerVariants}
+                >
+                  <motion.div className="text-center" variants={itemVariants}>
+                    <div className="relative w-32 h-32 mx-auto mb-4">
+                      <div className="w-full h-full rounded-full border-4 border-yellow-400 overflow-hidden">
+                        <Image
+                          src="/images/partnership-1.jpg"
+                          alt="지속적인 소통"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-white text-sm font-semibold bg-gray-800 bg-opacity-80 p-2 rounded">
+                      지속적인<br />
+                      소통
+                    </p>
+                  </motion.div>
+
+                  <motion.div className="text-center" variants={itemVariants}>
+                    <div className="relative w-32 h-32 mx-auto mb-4">
+                      <div className="w-full h-full rounded-full border-4 border-yellow-400 overflow-hidden">
+                        <Image
+                          src="/images/partnership-2.jpg"
+                          alt="문제해결 지원"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-white text-sm font-semibold bg-gray-800 bg-opacity-80 p-2 rounded">
+                      문제해결<br />
+                      지원
+                    </p>
+                  </motion.div>
+
+                  <motion.div className="text-center" variants={itemVariants}>
+                    <div className="relative w-32 h-32 mx-auto mb-4">
+                      <div className="w-full h-full rounded-full border-4 border-yellow-400 overflow-hidden">
+                        <Image
+                          src="/images/partnership-3.jpg"
+                          alt="상생 협력"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-white text-sm font-semibold bg-gray-800 bg-opacity-80 p-2 rounded">
+                      상생<br />
+                      협력
+                    </p>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+
+              {/* 04 쉽고 빠른 창업 섹션 */}
+              <motion.div 
+                className="mt-16"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={containerVariants}
+              >
+                <motion.div className="mb-8" variants={itemVariants}>
+                  <div className="flex items-center mb-4">
+                    <span className="text-4xl font-bold text-red-600 mr-4">04</span>
+                    <h4 className="text-2xl font-bold text-gray-800">쉽고 빠른 창업</h4>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-gray-600 text-sm">간편하고 체계적인 창업 시스템으로</p>
+                    <p className="text-gray-600 text-sm">빠른 시일 내에 성공적인 오픈을 지원합니다.</p>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="grid md:grid-cols-3 gap-8"
+                  variants={containerVariants}
+                >
+                  <motion.div className="text-center" variants={itemVariants}>
+                    <div className="relative w-32 h-32 mx-auto mb-4">
+                      <div className="w-full h-full rounded-full border-4 border-yellow-400 overflow-hidden">
+                        <Image
+                          src="/images/startup-1.jpg"
+                          alt="간편한 절차"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-white text-sm font-semibold bg-gray-800 bg-opacity-80 p-2 rounded">
+                      간편한<br />
+                      절차
+                    </p>
+                  </motion.div>
+
+                  <motion.div className="text-center" variants={itemVariants}>
+                    <div className="relative w-32 h-32 mx-auto mb-4">
+                      <div className="w-full h-full rounded-full border-4 border-yellow-400 overflow-hidden">
+                        <Image
+                          src="/images/startup-2.jpg"
+                          alt="빠른 오픈"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-white text-sm font-semibold bg-gray-800 bg-opacity-80 p-2 rounded">
+                      빠른<br />
+                      오픈
+                    </p>
+                  </motion.div>
+
+                  <motion.div className="text-center" variants={itemVariants}>
+                    <div className="relative w-32 h-32 mx-auto mb-4">
+                      <div className="w-full h-full rounded-full border-4 border-yellow-400 overflow-hidden">
+                        <Image
+                          src="/images/startup-3.jpg"
+                          alt="성공 지원"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-white text-sm font-semibold bg-gray-800 bg-opacity-80 p-2 rounded">
+                      성공<br />
+                      지원
+                    </p>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
