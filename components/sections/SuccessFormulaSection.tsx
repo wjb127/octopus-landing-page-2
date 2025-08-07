@@ -9,7 +9,7 @@ export default function SuccessFormulaSection() {
         <div className="max-w-6xl mx-auto">
           {/* 섹션 타이틀 */}
           <div className="text-center mb-16">
-            <p className="text-lg text-gray-600 mb-2">성공 창업의 황금비율</p>
+            <p className="text-lg text-gray-600 mb-2">성공 창업의 황금오션</p>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
               황금쭈꾸미집의 <span className="text-red-600">남다른 수익비결</span>
             </h2>

@@ -21,14 +21,26 @@ export default function EducationSection() {
       {/* 콘텐츠 */}
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-7xl mx-auto">
-          {/* 상단 제목 */}
-          <div className="text-center text-white mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              오직 '본점 메뉴만' 6000개 이상.
-            </h2>
-            <h1 className="text-3xl md:text-5xl font-bold text-red-500">
-              살인적 수익률 100% 확인함!
-            </h1>
+          {/* 상단 로고 */}
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/images/b8ea0f0bb3662.png"
+              alt="로고"
+              width={120}
+              height={40}
+              className="w-auto h-auto object-contain"
+            />
+          </div>
+          
+          {/* 리뷰 카드 이미지 */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/images/dbf4ae8e7236a.png"
+              alt="리뷰 카드"
+              width={600}
+              height={200}
+              className="w-auto h-auto object-contain"
+            />
           </div>
           
           {/* 4개 카드 그리드 */}
