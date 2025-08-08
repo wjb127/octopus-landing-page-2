@@ -120,3 +120,148 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* 황금쭈꾸미집 커스텀 스타일 */
+:root {
+  --golden-yellow: #ffc20f;
+  --golden-yellow-light: #ffc20e;
+  --brand-red: rgb(196, 22, 28);
+  --text-emphasis-color: #fff;
+}
+
+/* 부드러운 스크롤링 */
+html {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-tap-highlight-color: rgba(201, 224, 253, 0.3);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 링크 전환 효과 */
+a {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* 텍스트 강조 효과 (원본 스타일) */
+.text-emphasis-white {
+  text-emphasis: filled white;
+  -webkit-text-emphasis: filled white;
+}
+
+/* 황금색 배경 그라데이션 */
+.bg-golden-gradient {
+  background: var(--golden-yellow);
+  background-image: linear-gradient(
+    to bottom, 
+    rgba(255,194,15,0.01), 
+    rgba(255,194,15,0.8) 66%, 
+    rgba(255,194,15,0.9) 83%, 
+    rgba(255,194,15,0.98) 98%, 
+    var(--golden-yellow)
+  );
+}
+
+/* 브랜드 색상 헬퍼 클래스 */
+.text-golden {
+  color: var(--golden-yellow) !important;
+}
+
+.bg-golden {
+  background-color: var(--golden-yellow) !important;
+}
+
+.border-golden {
+  border-color: var(--golden-yellow) !important;
+}
+
+.text-brand-red {
+  color: var(--brand-red) !important;
+}
+
+.bg-brand-red {
+  background-color: var(--brand-red) !important;
+}
+
+/* 원본 스타일링 재현 */
+.section-golden-bg {
+  background-color: var(--golden-yellow) !important;
+}
+
+.section-golden-light-bg {
+  background-color: var(--golden-yellow-light) !important;
+}
+
+/* 텍스트 스타일 */
+.text-outline-white {
+  text-shadow: 
+    -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+/* 원본과 동일한 애니메이션 클래스 */
+.animated {
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+
+.jackInTheBox {
+  animation-name: jackInTheBox;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  70% {
+    transform: rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+

@@ -28,6 +28,7 @@ import FixedBottomForm from '../../components/ui/FixedBottomForm'
 import GoldenOceanSection from '../../components/sections/GoldenOceanSection'
 import FirstAuthenticitySection from '../../components/sections/FirstAuthenticitySection'
 
+
 export default function Home() {
   const [activeSection, setActiveSection] = useState('index')
 
