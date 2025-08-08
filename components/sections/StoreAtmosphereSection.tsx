@@ -39,18 +39,14 @@ export default function StoreAtmosphereSection() {
     <section className="relative overflow-hidden" id="store-atmosphere">
       {/* 메인 타이틀 섹션 - 황금색 배경 */}
       <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-500 py-20">
-        {/* 좌측 원형 디자인 요소 */}
-        <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-32 h-32 md:w-48 md:h-48">
-          <div className="relative w-full h-full">
-            {/* 외곽 점선 원 */}
-            <div className="absolute inset-0 border-4 border-dashed border-white/40 rounded-full"></div>
-            {/* 내부 실선 원 */}
-            <div className="absolute inset-4 border-2 border-solid border-white/60 rounded-full"></div>
-            {/* 중앙 원 */}
-            <div className="absolute inset-8 bg-white/20 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg md:text-xl">100%</span>
-            </div>
-          </div>
+        {/* 좌측 원형 로고 이미지 */}
+        <div className="absolute left-8 top-1/2 transform -translate-y-1/2 w-32 h-32 md:w-48 md:h-48">
+          <Image
+            src="/images/e94a4a8e9a1d6.png"
+            alt="황금쭈꾸미집 로고"
+            fill
+            className="object-contain"
+          />
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
