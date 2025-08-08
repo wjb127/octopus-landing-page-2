@@ -25,8 +25,8 @@ import GallerySection from '../../components/sections/GallerySection'
 import ConsultationSection from '../../components/sections/ConsultationSection'
 import BottomContactForm from '../../components/ui/BottomContactForm'
 import FixedBottomForm from '../../components/ui/FixedBottomForm'
-import GoldenOceanSection from '../../components/sections/GoldenOceanSection'
-import FirstAuthenticitySection from '../../components/sections/FirstAuthenticitySection'
+
+
 
 
 export default function Home() {
@@ -136,16 +136,6 @@ export default function Home() {
         {/* Quality Section */}
         <div id="quality">
           <QualitySection />
-        </div>
-
-        {/* Golden Ocean Section */}
-        <div id="golden-ocean">
-          <GoldenOceanSection />
-        </div>
-
-        {/* First Authenticity Section */}
-        <div id="first-authenticity">
-          <FirstAuthenticitySection />
         </div>
 
         {/* Brand Intro Section */}

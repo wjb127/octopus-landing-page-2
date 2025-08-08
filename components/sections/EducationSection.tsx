@@ -109,17 +109,15 @@ export default function EducationSection() {
       {/* 콘텐츠 */}
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-7xl mx-auto">
-          {/* 상단 타이틀 */}
+          {/* 상단 타이틀 이미지 */}
           <div className="text-center mb-12">
-            <div className="inline-block bg-red-600 text-white px-6 py-2 rounded-full mb-6">
-              <span className="font-bold">쭈꾸미집</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              오직 '<span className="text-yellow-400">본점</span>'에서만 <span className="text-yellow-400">6000개</span> 이상,
-            </h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-red-500">
-              황금쭈꾸미집 <span className="text-yellow-400">100%</span> 진리뵤!
-            </h3>
+            <Image
+              src="/images/dbf4ae8e7236a.png"
+              alt="오직 본점에서만 6000개 이상, 황금쭈꾸미집 100% 진리뵤!"
+              width={800}
+              height={165}
+              className="mx-auto"
+            />
           </div>
           
           {/* 연속 회전 캐러셀 */}
