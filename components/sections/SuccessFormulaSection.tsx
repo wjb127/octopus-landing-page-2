@@ -40,7 +40,7 @@ export default function SuccessFormulaSection() {
             <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
               <div className="h-64">
                 <Image
-                  src="/images/6b020c3682153.png"
+                  src="/images/477423a148654.png"
                   alt="재료 비용 절감을 위한 황금쭈꾸미 물류유통시스템"
                   width={400}
                   height={250}
@@ -53,7 +53,7 @@ export default function SuccessFormulaSection() {
             <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
               <div className="h-64">
                 <Image
-                  src="/images/d3c6a7e75581f.png"
+                  src="/images/c7c7c2d39f338.png"
                   alt="황금쭈꾸미의 품질 확보"
                   width={400}
                   height={250}
@@ -66,7 +66,7 @@ export default function SuccessFormulaSection() {
             <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
               <div className="h-64">
                 <Image
-                  src="/images/6ac9ab1ee5226.png"
+                  src="/images/018fff1bff3f7.png"
                   alt="성공창업의 핵심요소 황금쭈꾸미집 본사지원"
                   width={400}
                   height={250}
