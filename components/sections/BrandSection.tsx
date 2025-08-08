@@ -107,19 +107,17 @@ export default function BrandSection() {
             </div>
           </div>
 
-          {/* Success Secret Section */}
+          {/* Success Secret Section - 이미지로 교체 */}
           <div className="bg-gray-100 py-20 text-center">
             <div className="max-w-4xl mx-auto px-4">
-              <div className="mb-12">
-                <h4 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                  손님이 끊이지 않는 <span className="text-red-600 border-2 border-red-600 px-4 py-2 rounded-full inline-block">식당의 비결</span>
-                </h4>
-              </div>
-              
-              <div>
-                <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-8 leading-tight">
-                  음식에 대한진정성!
-                </h2>
+              <div className="flex items-center justify-center">
+                <Image
+                  src="/images/21d2d0f214e82.png"
+                  alt="손님이 끊이지 않는 식당의 비결 - 음식에 대한 진정성"
+                  width={837}
+                  height={279}
+                  className="max-w-full h-auto"
+                />
               </div>
             </div>
           </div>

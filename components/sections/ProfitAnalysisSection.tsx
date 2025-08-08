@@ -1,115 +1,134 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export default function ProfitAnalysisSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  }
+
+  const zoomInVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.8
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut" as const
+      }
+    }
+  }
+
   return (
     <section className="relative py-20 overflow-hidden" id="profit-analysis">
-      {/* 배경 이미지 */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/aff99ce23d431.png" // 임시 배경 이미지 - 매장 내부 이미지로 교체 예정
-          alt="황금쭈꾸미집 매장 배경"
-          fill
-          className="object-cover"
-        />
-        {/* 어두운 오버레이 */}
-        <div className="absolute inset-0 bg-black/70"></div>
+      {/* 배경 - 원본과 동일한 갈색 배경 */}
+      <div className="absolute inset-0" style={{ backgroundColor: 'rgba(82, 64, 11, 0.8)' }}>
+        {/* 브라운 색상 오버레이 */}
       </div>
 
       {/* 콘텐츠 */}
-      <div className="relative z-10 container mx-auto px-4">
+      <motion.div 
+        className="relative z-10 container mx-auto px-4"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="max-w-6xl mx-auto">
           {/* 섹션 타이틀 */}
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            variants={zoomInVariants}
+          >
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
               황금비율 수익설계
             </h2>
+          </motion.div>
+
+          {/* 메인 콘텐츠 그리드 - PC 버전 */}
+          <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
+            {/* 좌측 - 수익률 그래프 이미지 */}
+            <motion.div 
+              className="flex justify-center"
+              variants={zoomInVariants}
+            >
+              <Image
+                src="/images/4ce4e653b127c.png"
+                alt="황금쭈꾸미집 수익률 그래프 이미지"
+                width={610}
+                height={490}
+                className="w-full max-w-md h-auto"
+              />
+            </motion.div>
+
+            {/* 우측 - 수익률 표 이미지 */}
+            <motion.div 
+              className="flex justify-center lg:justify-start"
+              variants={zoomInVariants}
+              transition={{ delay: 0.2 }}
+            >
+              <Image
+                src="/images/eed8c460a0b91.png"
+                alt="황금쭈꾸미집 수익률 표 이미지"
+                width={433}
+                height={551}
+                className="w-full max-w-sm h-auto"
+              />
+            </motion.div>
           </div>
 
-          {/* 메인 콘텐츠 그리드 */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* 좌측 - 도넛 차트 영역 */}
-            <div className="flex justify-center">
-              <div className="relative w-80 h-80 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                {/* 차트 이미지 플레이스홀더 */}
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-red-500 to-pink-400 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <p className="text-sm mb-2">수익률</p>
-                    <p className="text-4xl font-bold">30%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* 우측 - 영수증 스타일 수익 분석표 */}
-            <div className="flex justify-center lg:justify-start">
-              <div className="bg-white rounded-lg shadow-2xl p-8 max-w-sm w-full receipt-style">
-                {/* 영수증 헤더 */}
-                <div className="text-center mb-6 border-b border-gray-300 pb-4">
-                  <div className="flex items-center justify-center mb-2">
-                    <Image
-                      src="/images/b4201f868df71.png"
-                      alt="황금쭈꾸미집 로고"
-                      width={40}
-                      height={40}
-                      className="mr-2"
-                    />
-                    <h3 className="text-2xl font-bold text-gray-800">쭈꾸미집</h3>
-                  </div>
-                </div>
-
-                {/* 수익 항목들 */}
-                <div className="space-y-3 mb-6">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-700">월매출</span>
-                    <span className="font-semibold">35,646,000원</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-700">인건비</span>
-                    <span className="font-semibold">1,500,000원</span>
-                    <span className="text-sm text-gray-500">4.2%</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-700">임대비</span>
-                    <span className="font-semibold">1,784,583원</span>
-                    <span className="text-sm text-gray-500">5%</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-700">원자재</span>
-                    <span className="font-semibold">1,574,260원</span>
-                    <span className="text-sm text-gray-500">4%</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-700">기타비</span>
-                    <span className="font-semibold">17,132,119원</span>
-                    <span className="text-sm text-gray-500">48%</span>
-                  </div>
-                </div>
-
-                {/* 총 수익 */}
-                <div className="border-t-2 border-gray-300 pt-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-lg font-bold text-red-600">순이익</span>
-                    <div className="text-right">
-                      <span className="text-2xl font-bold text-red-600">13,871,087원</span>
-                      <div className="flex items-center justify-end mt-1">
-                        <span className="text-3xl font-bold text-red-600 bg-red-100 px-3 py-1 rounded-full">30%</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 영수증 하단 */}
-                <div className="text-center mt-6 pt-4 border-t border-gray-200">
-                  <p className="text-xs text-gray-500">* 평균 수익률을 바탕으로 산출된 데이터 * 점포마다 차이가 날 수 있습니다</p>
-                </div>
-              </div>
-            </div>
+          {/* 모바일 버전 이미지들 */}
+          <div className="lg:hidden space-y-8">
+            <motion.div 
+              className="text-center"
+              variants={zoomInVariants}
+            >
+              <Image
+                src="/images/95797d0fbf6f4.png"
+                alt="황금쭈꾸미집 수익률 그래프 이미지 (모바일)"
+                width={400}
+                height={300}
+                className="w-full max-w-sm mx-auto h-auto"
+              />
+            </motion.div>
+            <motion.div 
+              className="text-center"
+              variants={zoomInVariants}
+              transition={{ delay: 0.2 }}
+            >
+              <Image
+                src="/images/f224f7918dbdd.png"
+                alt="황금쭈꾸미집 수익률 영수증 이미지 (모바일)"
+                width={400}
+                height={300}
+                className="w-full max-w-sm mx-auto h-auto"
+              />
+            </motion.div>
           </div>
+
+          {/* 하단 주의사항 */}
+          <motion.div 
+            className="text-center mt-12"
+            variants={zoomInVariants}
+            transition={{ delay: 0.4 }}
+          >
+            <p className="text-white/70 text-sm">
+              * 매장 상황에 따라 매출액 및 영업이익은 상이할 수 있습니다.
+            </p>
+          </motion.div>
         </div>
-      </div>
-
+      </motion.div>
     </section>
   )
 }
