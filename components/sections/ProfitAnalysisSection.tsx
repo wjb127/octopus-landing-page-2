@@ -32,9 +32,17 @@ export default function ProfitAnalysisSection() {
 
   return (
     <section className="relative py-20 overflow-hidden" id="profit-analysis">
-      {/* 배경 - 원본과 동일한 갈색 배경 */}
-      <div className="absolute inset-0" style={{ backgroundColor: 'rgba(82, 64, 11, 0.8)' }}>
-        {/* 브라운 색상 오버레이 */}
+      {/* 배경 이미지 - 매장 내부 실제 모습 */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/store-cctv.jpg"
+          alt="황금쭈꾸미집 매장 내부 실제 모습"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* 어두운 오버레이로 텍스트 가독성 확보 */}
+        <div className="absolute inset-0 bg-black/70"></div>
       </div>
 
       {/* 콘텐츠 */}
