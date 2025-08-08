@@ -1,8 +1,42 @@
 'use client'
 
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 export default function BrandSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut"
+      }
+    }
+  }
+
+  const zoomInVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut"
+      }
+    }
+  }
   return (
     <section 
       className="py-20 bg-gradient-to-b from-gray-50 to-white"
@@ -11,9 +45,15 @@ export default function BrandSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           {/* Main Content - Text Left, Image Right */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid lg:grid-cols-2 gap-16 items-center mb-16"
+          >
             {/* Left - Brand Story Text */}
-            <div className="space-y-8">
+            <motion.div variants={itemVariants} className="space-y-8">
               <div>
                 <div className="flex items-center mb-8">
                   <Image
@@ -42,10 +82,10 @@ export default function BrandSection() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right - Brand Image */}
-            <div className="relative">
+            <motion.div variants={zoomInVariants} className="relative">
               <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
                 <Image
                   src="/images/aff99ce23d431.png"
@@ -54,8 +94,8 @@ export default function BrandSection() {
                   className="object-contain"
                 />
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
 
           {/* Brand Promise Section */}
