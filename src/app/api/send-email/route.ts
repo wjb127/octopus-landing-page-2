@@ -16,9 +16,14 @@ export async function POST(request: NextRequest) {
     }
 
     // 관리자에게 알림 이메일 발송
+    // 테스트 환경에서는 검증된 이메일로만 발송 가능
+    const toEmail = process.env.NODE_ENV === 'development' 
+      ? 'qhv147@gmail.com' 
+      : process.env.NOTIFICATION_EMAIL || 'wjb127@naver.com'
+    
     const { data, error } = await resend.emails.send({
       from: 'noreply@resend.dev', // Resend 기본 도메인 사용
-      to: process.env.NOTIFICATION_EMAIL || 'wjb127@naver.com',
+      to: toEmail,
       subject: `[황금쭈꾸미집] 새로운 창업 문의 - ${name}님`,
       html: `
         <div style="max-width: 600px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;">
@@ -62,9 +67,14 @@ export async function POST(request: NextRequest) {
     })
 
     if (error) {
-      console.error('Resend 이메일 발송 에러:', error)
+      console.error('Resend 이메일 발송 에러 상세:', {
+        error,
+        message: error.message,
+        name: error.name,
+        apiKey: process.env.RESEND_API_KEY ? '설정됨' : '미설정'
+      })
       return NextResponse.json(
-        { error: '이메일 발송에 실패했습니다.' },
+        { error: '이메일 발송에 실패했습니다.', details: error.message },
         { status: 500 }
       )
     }

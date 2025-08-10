@@ -25,11 +25,22 @@ export default function ConsultationSection() {
     }))
   }
 
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>, part: 'part1' | 'part2' | 'part3') => {
+    const { value } = e.target
+    setPhoneData(prev => ({
+      ...prev,
+      [part]: value
+    }))
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!formData.name || !formData.phone) {
-      setSubmitMessage('이름과 연락처를 입력해주세요.')
+    // 전화번호 조합
+    const fullPhone = `${phoneData.part1}-${phoneData.part2}-${phoneData.part3}`
+    
+    if (!formData.name || !phoneData.part1 || !phoneData.part2 || !phoneData.part3) {
+      setSubmitMessage('이름과 연락처를 모두 입력해주세요.')
       return
     }
 
@@ -37,28 +48,49 @@ export default function ConsultationSection() {
     setSubmitMessage('')
 
     try {
-      const { error } = await supabase
-        .from('inquiries')
+      // Supabase에 데이터 저장
+      const { error: supabaseError } = await supabase
+        .from('kmong_6_inquiries')
         .insert([
           {
             name: formData.name,
-            phone: formData.phone,
-            message: formData.message,
-            source: 'consultation_section',
+            contact: fullPhone,
+            location: formData.message,
             created_at: new Date().toISOString()
           }
         ])
 
-      if (error) {
-        console.error('Error submitting form:', error)
-        setSubmitMessage('문의 등록 중 오류가 발생했습니다.')
-      } else {
-        setSubmitMessage('문의가 성공적으로 등록되었습니다!')
-        setFormData({ name: '', phone: '', message: '' })
+      if (supabaseError) throw supabaseError
+
+      // 이메일 발송 API 호출
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: fullPhone,
+          message: formData.message || '문의 내용 없음',
+          region: '상단 창업 문의 폼'
+        }),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        console.warn('이메일 발송 실패:', result.error)
+        // 이메일 실패해도 성공으로 처리 (데이터는 저장됨)
       }
+
+      // 성공 처리
+      setSubmitMessage('문의가 성공적으로 접수되었습니다!')
+      setFormData({ name: '', phone: '', message: '' })
+      setPhoneData({ part1: '', part2: '', part3: '' })
+
     } catch (error) {
-      console.error('Error:', error)
-      setSubmitMessage('문의 등록 중 오류가 발생했습니다.')
+      console.error('Error submitting form:', error)
+      setSubmitMessage('문의 접수 중 오류가 발생했습니다. 다시 시도해주세요.')
     } finally {
       setIsSubmitting(false)
       setTimeout(() => setSubmitMessage(''), 3000)
@@ -209,22 +241,26 @@ export default function ConsultationSection() {
                 <div className="flex space-x-2">
                   <input
                     type="text"
+                    value={phoneData.part1}
+                    onChange={(e) => handlePhoneChange(e, 'part1')}
                     className="flex-1 px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
                     placeholder="010"
                     maxLength={3}
+                    required
                   />
                   <input
                     type="text"
+                    value={phoneData.part2}
+                    onChange={(e) => handlePhoneChange(e, 'part2')}
                     className="flex-1 px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
                     placeholder="1234"
                     maxLength={4}
+                    required
                   />
                   <input
                     type="text"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
+                    value={phoneData.part3}
+                    onChange={(e) => handlePhoneChange(e, 'part3')}
                     className="flex-1 px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
                     placeholder="5678"
                     maxLength={4}
