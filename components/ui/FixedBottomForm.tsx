@@ -24,7 +24,7 @@ export default function FixedBottomForm() {
 
     try {
       // Supabase에 데이터 저장
-      const { error } = await supabase
+      const { error: supabaseError } = await supabase
         .from('kmong_6_inquiries')
         .insert([
           {
@@ -35,7 +35,28 @@ export default function FixedBottomForm() {
           }
         ])
 
-      if (error) throw error
+      if (supabaseError) throw supabaseError
+
+      // 이메일 발송 API 호출
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.contact,
+          message: formData.location,
+          region: '하단 고정 폼'
+        }),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        console.warn('이메일 발송 실패:', result.error)
+        // 이메일 실패해도 성공으로 처리 (데이터는 저장됨)
+      }
 
       // 성공 처리
       setShowSuccess(true)
