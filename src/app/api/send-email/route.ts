@@ -16,14 +16,9 @@ export async function POST(request: NextRequest) {
     }
 
     // 관리자에게 알림 이메일 발송
-    // 테스트 환경에서는 검증된 이메일로만 발송 가능
-    const toEmail = process.env.NODE_ENV === 'development' 
-      ? 'qhv147@gmail.com' 
-      : process.env.NOTIFICATION_EMAIL || 'wjb127@naver.com'
-    
     const { data, error } = await resend.emails.send({
-      from: 'noreply@resend.dev', // Resend 기본 도메인 사용
-      to: toEmail,
+      from: 'noreply@applicforge.com', // applicforge.com 도메인 사용
+      to: process.env.NOTIFICATION_EMAIL || 'wjb127@naver.com',
       subject: `[황금쭈꾸미집] 새로운 창업 문의 - ${name}님`,
       html: `
         <div style="max-width: 600px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;">
