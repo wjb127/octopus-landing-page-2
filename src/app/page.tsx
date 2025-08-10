@@ -23,7 +23,6 @@ import InterludeSection from '../../components/sections/InterludeSection'
 import FranchiseSection from '../../components/sections/FranchiseSection'
 import GallerySection from '../../components/sections/GallerySection'
 import ConsultationSection from '../../components/sections/ConsultationSection'
-import BottomContactForm from '../../components/ui/BottomContactForm'
 import FixedBottomForm from '../../components/ui/FixedBottomForm'
 
 
@@ -35,13 +34,18 @@ export default function Home() {
   const sections = useMemo(() => [
     { id: 'index', component: HeroSection },
     { id: 'brand', component: BrandSection },
-    { id: 'menu', component: MenuSection },
+    { id: 'competitive', component: CompetitiveAdvantageSection },
+    { id: 'main-menu', component: MainMenuSection },
     { id: '16', component: FranchiseSection },
+    { id: 'consultation', component: ConsultationSection },
   ], [])
 
   const handleNavigate = (sectionId: string) => {
     const element = document.getElementById(
-      sectionId === 'index' ? 'hero' : sectionId === '16' ? 'franchise' : sectionId
+      sectionId === 'index' ? 'hero' : 
+      sectionId === '16' ? 'franchise' : 
+      sectionId === 'competitive' ? 'competitive-advantage' : 
+      sectionId
     )
     
     if (element) {
@@ -61,7 +65,10 @@ export default function Home() {
       const scrollPosition = window.scrollY + 100
 
       sections.forEach(({ id }) => {
-        const elementId = id === 'index' ? 'hero' : id === '16' ? 'franchise' : id
+        const elementId = id === 'index' ? 'hero' : 
+                         id === '16' ? 'franchise' : 
+                         id === 'competitive' ? 'competitive-advantage' : 
+                         id
         const element = document.getElementById(elementId)
         
         if (element) {
@@ -181,8 +188,6 @@ export default function Home() {
 
       <Footer />
 
-      {/* Bottom Contact Form */}
-      <BottomContactForm />
 
       {/* Fixed Bottom Form */}
       <FixedBottomForm />

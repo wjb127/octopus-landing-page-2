@@ -55,16 +55,6 @@ const reviewData = [
     images: ['/images/78a799ceb2768.png', '/images/e4db0fd5ffbda.png'],
     status: '경험 정보 상세보기 >'
   },
-  {
-    id: 6,
-    date: '방문일 2024. 4. 10(수)',
-    author: '박○○',
-    rating: 5,
-    location: '경재',
-    content: '가족과 함께 저녁 먹으러 왔어요. 아이들도 맛있다고 하네요. 깔끔하고 좋습니다!',
-    images: ['/images/9ba9bfef6e52d.png'],
-    status: '경험 정보 상세보기 >'
-  }
 ]
 
 export default function EducationSection() {

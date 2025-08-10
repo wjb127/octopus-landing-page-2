@@ -172,7 +172,7 @@ export default function BrandSection() {
             <div className="max-w-7xl mx-auto px-4">
               <div className="grid lg:grid-cols-[0.8fr_1.8fr] gap-12 items-center">
                 {/* Left - Content */}
-                <div className="space-y-6">
+                <div className="space-y-6 order-2 lg:order-1">
                   {/* Badge */}
                   <div className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-lg">
                     두 번째 진정성
@@ -199,7 +199,7 @@ export default function BrandSection() {
                 </div>
 
                 {/* Right - Cooked Octopus Image */}
-                <div className="flex justify-center lg:justify-end">
+                <div className="flex justify-center lg:justify-end order-1 lg:order-2">
                   <Image
                     src="/images/3738797c89abf.png"
                     alt="건강한 재료로 숙성된 특제양념"

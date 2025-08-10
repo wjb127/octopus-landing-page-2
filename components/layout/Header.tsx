@@ -16,9 +16,10 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
 
   const navItems = [
     { id: 'index', label: '브랜드소개' },
-    { id: 'menu', label: '메뉴 안내' },
+    { id: 'competitive', label: '경쟁력' },
+    { id: 'main-menu', label: '메뉴 안내' },
     { id: '16', label: '창업 안내' },
-    { id: '17', label: '창업 문의' },
+    { id: 'consultation', label: '창업 문의' },
   ]
 
   useEffect(() => {
