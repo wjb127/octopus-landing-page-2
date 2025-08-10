@@ -67,13 +67,13 @@ export default function FixedBottomForm() {
           </div>
 
           {/* 문의 폼 */}
-          <form onSubmit={handleSubmit} className="flex gap-2 flex-1 max-w-4xl">
+          <form onSubmit={handleSubmit} className="flex gap-2 md:gap-3 flex-1 max-w-5xl">
             <input
               type="text"
               placeholder="이름"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-20 px-2 py-2 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm"
+              className="w-20 md:w-32 px-2 md:px-4 py-2 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm md:text-base"
               disabled={isSubmitting}
             />
             <input
@@ -81,7 +81,7 @@ export default function FixedBottomForm() {
               placeholder="연락처"
               value={formData.contact}
               onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-              className="w-24 px-2 py-2 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm"
+              className="w-24 md:w-40 px-2 md:px-4 py-2 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm md:text-base"
               disabled={isSubmitting}
             />
             <input
@@ -89,13 +89,13 @@ export default function FixedBottomForm() {
               placeholder="문의내용"
               value={formData.location}
               onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-              className="w-32 px-2 py-2 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm"
+              className="w-32 md:flex-1 px-2 md:px-4 py-2 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm md:text-base"
               disabled={isSubmitting}
             />
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm whitespace-nowrap"
+              className="px-4 md:px-6 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base whitespace-nowrap"
             >
               {isSubmitting ? '전송중...' : '작성'}
             </button>

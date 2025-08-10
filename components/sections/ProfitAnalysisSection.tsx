@@ -41,8 +41,8 @@ export default function ProfitAnalysisSection() {
           className="object-cover"
           priority
         />
-        {/* 어두운 오버레이로 텍스트 가독성 확보 */}
-        <div className="absolute inset-0 bg-black/70"></div>
+        {/* 황금색 오버레이로 텍스트 가독성 확보 */}
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(82, 64, 11, 0.8)' }}></div>
       </div>
 
       {/* 콘텐츠 */}

@@ -125,18 +125,16 @@ export default function BrandSection() {
           {/* First Authenticity Section */}
           <div className="bg-gray-50 py-20">
             <div className="max-w-7xl mx-auto px-4">
-              <div className="grid lg:grid-cols-[2fr_1fr] gap-16 items-center">
-                {/* Left - Octopus Image with Vertical Text */}
-                <div className="relative">
-                  <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                    {/* Octopus Image */}
-                    <Image
-                      src="/images/05a959de74097.png"
-                      alt="황금색 고리의 최상급 쭈꾸미"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+              <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 items-center">
+                {/* Left - Octopus Image */}
+                <div className="flex justify-center lg:justify-start">
+                  <Image
+                    src="/images/05a959de74097.png"
+                    alt="황금색 고리의 최상급 쭈꾸미"
+                    width={500}
+                    height={400}
+                    className="w-full max-w-lg h-auto"
+                  />
                 </div>
 
                 {/* Right - Content */}
@@ -172,7 +170,7 @@ export default function BrandSection() {
           {/* Second Authenticity Section */}
           <div className="bg-white py-20">
             <div className="max-w-7xl mx-auto px-4">
-              <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-center">
+              <div className="grid lg:grid-cols-[0.8fr_1.8fr] gap-12 items-center">
                 {/* Left - Content */}
                 <div className="space-y-6">
                   {/* Badge */}
@@ -200,17 +198,15 @@ export default function BrandSection() {
                   </div>
                 </div>
 
-                {/* Right - Cooked Octopus Image with Vertical Text */}
-                <div className="relative">
-                  <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                    {/* Cooked Octopus Image */}
-                    <Image
-                      src="/images/3738797c89abf.png"
-                      alt="건강한 재료로 숙성된 특제양념"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+                {/* Right - Cooked Octopus Image */}
+                <div className="flex justify-center lg:justify-end">
+                  <Image
+                    src="/images/3738797c89abf.png"
+                    alt="건강한 재료로 숙성된 특제양념"
+                    width={600}
+                    height={480}
+                    className="w-full max-w-2xl h-auto"
+                  />
                 </div>
               </div>
             </div>
@@ -219,17 +215,16 @@ export default function BrandSection() {
           {/* Third Authenticity Section - 3무 법칙 */}
           <div className="bg-gray-50 py-20">
             <div className="max-w-7xl mx-auto px-4">
-              <div className="grid lg:grid-cols-[2fr_1fr] gap-16 items-center">
+              <div className="grid lg:grid-cols-[1.8fr_0.8fr] gap-12 items-center">
                 {/* Left - 3무 법칙 Image */}
-                <div className="relative">
-                  <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                    <Image
-                      src="/images/1dd61c4af9b12.png"
-                      alt="황금쭈꾸미의 3무 법칙"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+                <div className="flex justify-center lg:justify-start">
+                  <Image
+                    src="/images/1dd61c4af9b12.png"
+                    alt="황금쭈꾸미의 3무 법칙"
+                    width={600}
+                    height={480}
+                    className="w-full max-w-2xl h-auto"
+                  />
                 </div>
 
                 {/* Right - Content */}
