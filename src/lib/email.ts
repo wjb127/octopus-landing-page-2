@@ -6,7 +6,6 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 export interface EmailNotificationData {
   name: string
   contact: string
-  location?: string  // 지역 또는 위치
   message?: string   // 문의 내용
   region?: string    // 폼 구분 (상단/하단)
   submittedAt: string
@@ -57,13 +56,6 @@ export async function sendLeadNotificationEmail(data: EmailNotificationData) {
                 <strong style="color: #7c2d12; font-size: 16px;">📞 연락처:</strong>
                 <span style="color: #1f2937; font-size: 18px; font-weight: bold; margin-left: 15px;">${data.contact}</span>
               </div>
-              
-              ${data.location ? `
-              <div style="margin-bottom: 20px; padding: 15px; background: linear-gradient(to right, #fef7e7, #fff7ed); border-left: 4px solid #f97316; border-radius: 6px;">
-                <strong style="color: #7c2d12; font-size: 16px;">🏪 희망 지역:</strong>
-                <span style="color: #1f2937; font-size: 18px; margin-left: 15px;">${data.location}</span>
-              </div>
-              ` : ''}
               
               ${data.message ? `
               <div style="margin-bottom: 20px; padding: 15px; background: linear-gradient(to right, #fef7e7, #fff7ed); border-left: 4px solid #f97316; border-radius: 6px;">
@@ -126,8 +118,8 @@ function getRecipients(): string[] {
   if (envList) {
     return envList.split(',').map((e) => e.trim()).filter(Boolean)
   }
-  // 기본값: 단일 수신자만 유지
-  return ['wjb127@naver.com']
+  // 기본값: 복수 수신자
+  return ['wjb127@naver.com', 'pretough@naver.com']
 }
 
 

@@ -17,7 +17,6 @@ export async function POST(request: NextRequest) {
     const emailResult = await sendLeadNotificationEmail({
       name,
       contact: phone,
-      location: location || '미지정',
       message: message || '문의 내용 없음',
       region: region || '웹사이트 문의',
       submittedAt: new Date().toLocaleString('ko-KR')
