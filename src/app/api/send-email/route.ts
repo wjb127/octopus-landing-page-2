@@ -3,23 +3,24 @@ import { sendLeadNotificationEmail } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, phone, message, region, loanType, creditStatus, submittedAt } = await request.json()
+    const { name, phone, message, region, location } = await request.json()
 
     // 필수 필드 검증
-    if (!name || !phone || !message) {
+    if (!name || !phone) {
       return NextResponse.json(
-        { error: '필수 필드가 누락되었습니다.' },
+        { error: '이름과 연락처는 필수입니다.' },
         { status: 400 }
       )
     }
 
-    // 통합 이메일 유틸 호출 (필드 매핑 포함)
+    // 쭈꾸미집 창업 문의 이메일 발송
     const emailResult = await sendLeadNotificationEmail({
       name,
       contact: phone,
-      loanType: loanType || region || '미지정',
-      creditStatus: creditStatus || '미입력',
-      submittedAt: submittedAt || new Date().toLocaleString('ko-KR')
+      location: location || '미지정',
+      message: message || '문의 내용 없음',
+      region: region || '웹사이트 문의',
+      submittedAt: new Date().toLocaleString('ko-KR')
     })
 
     if (!emailResult.success) {
