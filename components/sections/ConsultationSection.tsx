@@ -238,12 +238,12 @@ export default function ConsultationSection() {
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                   연락처
                 </label>
-                <div className="flex space-x-1 md:space-x-2">
+                <div className="flex space-x-2">
                   <input
                     type="text"
                     value={phoneData.part1}
                     onChange={(e) => handlePhoneChange(e, 'part1')}
-                    className="w-14 md:flex-1 px-2 md:px-4 py-3 text-center bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                    className="w-28 md:flex-1 px-2 md:px-4 py-3 text-center bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
                     placeholder="010"
                     maxLength={3}
                     required
@@ -252,7 +252,7 @@ export default function ConsultationSection() {
                     type="text"
                     value={phoneData.part2}
                     onChange={(e) => handlePhoneChange(e, 'part2')}
-                    className="w-16 md:flex-1 px-2 md:px-4 py-3 text-center bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                    className="w-32 md:flex-1 px-2 md:px-4 py-3 text-center bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
                     placeholder="1234"
                     maxLength={4}
                     required
@@ -261,7 +261,7 @@ export default function ConsultationSection() {
                     type="text"
                     value={phoneData.part3}
                     onChange={(e) => handlePhoneChange(e, 'part3')}
-                    className="w-16 md:flex-1 px-2 md:px-4 py-3 text-center bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                    className="w-32 md:flex-1 px-2 md:px-4 py-3 text-center bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
                     placeholder="5678"
                     maxLength={4}
                     required
