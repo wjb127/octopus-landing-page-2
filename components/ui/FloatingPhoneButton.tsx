@@ -65,12 +65,12 @@ export default function FloatingPhoneButton() {
               }}
               className={`fixed z-50 ${
                 isBottomFormVisible 
-                  ? 'bottom-48 right-4' // 하단 폼이 보일 때 더 위로 올림
-                  : 'bottom-16 right-4'  // 기본 위치도 더 상향
+                  ? 'bottom-56 right-4' // 하단 폼이 보일 때 더 위로 올림
+                  : 'bottom-24 right-4'  // 기본 위치도 추가 상향
               }`}
               style={{
                 // 하단 입력폼과 겹치지 않도록 추가 마진
-                marginBottom: isBottomFormVisible ? '120px' : '0px'
+                marginBottom: isBottomFormVisible ? '140px' : '0px'
               }}
             >
               <motion.button
