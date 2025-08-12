@@ -18,13 +18,11 @@ export const metadata: Metadata = {
   keywords: "황금쭈꾸미집,황금쭈꾸미집창업,황금쭈꾸미창업,쭈꾸미맛집,쭈꾸미전문점,쭈꾸미프랜차이즈",
   icons: {
     icon: [
-      // PNG 파비콘 (크게 적용되도록 256x256 지정)
-      { url: '/images/b8c8b47f618b6.png', sizes: '256x256', type: 'image/png' },
-      // 레거시 호환
+      { url: '/favicon.png' },
       { url: '/favicon.ico' }
     ],
     shortcut: '/favicon.ico',
-    apple: '/images/b8c8b47f618b6.png',
+    apple: '/favicon.png',
   },
 };
 
