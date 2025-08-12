@@ -39,8 +39,8 @@ export default function StoreAtmosphereSection() {
     <section className="relative overflow-hidden" id="store-atmosphere">
       {/* 메인 타이틀 섹션 - 황금색 배경 */}
       <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-500 py-20">
-        {/* 좌측 원형 로고 이미지 */}
-        <div className="absolute left-8 top-1/2 transform -translate-y-1/2 w-32 h-32 md:w-48 md:h-48">
+        {/* 좌측 원형 로고 이미지 - 모바일에서 숨김 */}
+        <div className="hidden md:block absolute left-8 top-1/2 transform -translate-y-1/2 w-32 h-32 md:w-48 md:h-48">
           <Image
             src="/images/e94a4a8e9a1d6.png"
             alt="황금쭈꾸미집 로고"

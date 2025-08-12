@@ -10,7 +10,7 @@ export default function SuccessFormulaSection() {
           {/* 섹션 타이틀 */}
           <div className="text-center mb-16">
             <p className="text-lg text-gray-600 mb-2">성공 창업의 황금오션</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            <h2 className="text-[18px] sm:text-3xl md:text-5xl font-bold text-gray-800 mb-6 whitespace-nowrap md:whitespace-normal leading-tight">
               황금쭈꾸미집의 <span className="text-red-600">남다른 수익비결</span>
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">

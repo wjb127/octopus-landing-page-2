@@ -144,11 +144,11 @@ export default function BrandSection() {
                 {/* Left - Octopus Image */}
                 <div className="flex justify-center lg:justify-start">
                   <Image
-                    src="/images/05a959de74097.png"
+                    src="/images/8175e595f1dbd.png"
                     alt="황금색 고리의 최상급 쭈꾸미"
-                    width={500}
-                    height={400}
-                    className="w-full max-w-lg h-auto"
+                    width={600}
+                    height={480}
+                    className="w-full max-w-2xl h-auto"
                   />
                 </div>
 
