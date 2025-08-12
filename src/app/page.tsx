@@ -24,6 +24,7 @@ import FranchiseSection from '../../components/sections/FranchiseSection'
 import GallerySection from '../../components/sections/GallerySection'
 import ConsultationSection from '../../components/sections/ConsultationSection'
 import FixedBottomForm from '../../components/ui/FixedBottomForm'
+import FloatingPhoneButton from '../../components/ui/FloatingPhoneButton'
 
 
 
@@ -191,6 +192,9 @@ export default function Home() {
 
       {/* Fixed Bottom Form */}
       <FixedBottomForm />
+      
+      {/* Floating Phone Button */}
+      <FloatingPhoneButton />
 
       {/* Scroll to Top Button */}
       <motion.button
