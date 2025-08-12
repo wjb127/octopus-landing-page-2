@@ -98,7 +98,7 @@ export default function ConsultationSection() {
   }
 
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-400">
+    <section className="relative py-16 md:py-20 overflow-hidden bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-400">
       {/* 배경 패턴 (임시 - 나중에 배경 이미지로 교체) */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 right-10 w-32 h-32 border-2 border-white rounded-lg transform rotate-12"></div>
@@ -107,29 +107,29 @@ export default function ConsultationSection() {
         <div className="absolute bottom-32 right-40 w-20 h-20 border-2 border-white rounded-lg transform -rotate-12"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-3 sm:px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* 섹션 헤더 */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-3 md:mb-4">
               창업 문의
             </h2>
-            <p className="text-lg text-gray-700 mb-2">
+            <p className="text-base md:text-lg text-gray-700 mb-1 md:mb-2 leading-snug">
               황금쭈꾸미집은 첫만남의 설렘을
             </p>
-            <p className="text-lg text-gray-700">
+            <p className="text-base md:text-lg text-gray-700 leading-snug">
               함께 할 분들을 언제나 환영합니다
             </p>
           </div>
 
           {/* 문의 폼 */}
           <div className="max-w-2xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               {/* 개인정보 수집 및 이용 동의 */}
-              <div className="bg-white/90 p-6 rounded-lg">
+              <div className="bg-white/90 p-4 md:p-6 rounded-lg">
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 mb-2">개인정보 수집 및 이용 동의</h4>
-                  <div className="text-xs text-gray-600 bg-gray-50 p-4 rounded max-h-40 overflow-y-auto leading-relaxed">
+                  <div className="text-xs text-gray-600 bg-gray-50 p-3 md:p-4 rounded max-h-40 overflow-y-auto leading-relaxed">
                     <p className="mb-3">
                       회사명(이하 &lsquo;회사&rsquo;라 한다)는 개인정보 보호법 제30조에 따라 정보 주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 
                       원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리지침을 수립, 공개합니다.
@@ -218,7 +218,7 @@ export default function ConsultationSection() {
 
               {/* 이름 입력 */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                   이름
                 </label>
                 <input
@@ -227,7 +227,7 @@ export default function ConsultationSection() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                  className="w-full px-3 md:px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
                   placeholder="이름을 입력해주세요"
                   required
                 />
@@ -235,7 +235,7 @@ export default function ConsultationSection() {
 
               {/* 연락처 입력 */}
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                   연락처
                 </label>
                 <div className="flex space-x-2">
@@ -243,7 +243,7 @@ export default function ConsultationSection() {
                     type="text"
                     value={phoneData.part1}
                     onChange={(e) => handlePhoneChange(e, 'part1')}
-                    className="flex-1 px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                    className="flex-1 px-3 md:px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
                     placeholder="010"
                     maxLength={3}
                     required
@@ -252,7 +252,7 @@ export default function ConsultationSection() {
                     type="text"
                     value={phoneData.part2}
                     onChange={(e) => handlePhoneChange(e, 'part2')}
-                    className="flex-1 px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                    className="flex-1 px-3 md:px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
                     placeholder="1234"
                     maxLength={4}
                     required
@@ -261,7 +261,7 @@ export default function ConsultationSection() {
                     type="text"
                     value={phoneData.part3}
                     onChange={(e) => handlePhoneChange(e, 'part3')}
-                    className="flex-1 px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                    className="flex-1 px-3 md:px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
                     placeholder="5678"
                     maxLength={4}
                     required
@@ -271,7 +271,7 @@ export default function ConsultationSection() {
 
               {/* 문의 내용 */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                   문의 내용
                 </label>
                 <textarea
@@ -280,7 +280,7 @@ export default function ConsultationSection() {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={5}
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 resize-none"
+                  className="w-full px-3 md:px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 resize-none"
                   placeholder="문의하실 내용을 자세히 적어주세요"
                 />
               </div>
