@@ -9,38 +9,26 @@ export default function FloatingPhoneButton() {
   const [isBottomFormVisible, setIsBottomFormVisible] = useState(false)
 
   useEffect(() => {
-    // 스크롤 감지로 버튼 표시/숨김
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      const windowHeight = window.innerHeight
-      
-      // 페이지 최상단에서는 숨기고, 조금 스크롤하면 표시
-      setIsVisible(scrollY > windowHeight * 0.3)
-    }
-
-    // 하단 입력폼 감지
+    // 하단 입력폼 감지만 유지하고, 모바일에서는 항상 표시
     const checkBottomFormVisibility = () => {
       const bottomForm = document.querySelector('[id*="FixedBottom"], .fixed-bottom-form')
       if (bottomForm) {
         const rect = bottomForm.getBoundingClientRect()
         const isFormVisible = rect.top < window.innerHeight && rect.bottom >= 0
         setIsBottomFormVisible(isFormVisible)
+      } else {
+        setIsBottomFormVisible(false)
       }
     }
 
-    const handleScrollAndCheck = () => {
-      handleScroll()
-      checkBottomFormVisibility()
-    }
+    setIsVisible(true)
+    checkBottomFormVisibility()
 
-    window.addEventListener('scroll', handleScrollAndCheck, { passive: true })
+    window.addEventListener('scroll', checkBottomFormVisibility, { passive: true })
     window.addEventListener('resize', checkBottomFormVisibility, { passive: true })
-    
-    // 초기 체크
-    handleScrollAndCheck()
 
     return () => {
-      window.removeEventListener('scroll', handleScrollAndCheck)
+      window.removeEventListener('scroll', checkBottomFormVisibility)
       window.removeEventListener('resize', checkBottomFormVisibility)
     }
   }, [])
