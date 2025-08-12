@@ -108,15 +108,23 @@ export default function BrandSection() {
           {/* Brand Promise Section */}
           <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 py-16 px-8 md:px-12 text-center">
             <div className="max-w-4xl mx-auto">
-              <h3 className="text-3xl md:text-5xl font-bold text-white mb-8">
+              <h3 className="text-[18px] sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-8 whitespace-nowrap md:whitespace-normal leading-tight">
                 대한민국 쭈꾸미 맛의 기준을 세우다
               </h3>
             </div>
           </div>
 
-          {/* Success Secret Section - 이미지로 교체 */}
-          <div className="bg-gray-100 py-20 text-center">
-            <div className="max-w-4xl mx-auto px-4">
+          {/* Success Secret Section - 대리석 배경 적용 */}
+          <div className="relative py-20 text-center overflow-hidden">
+            <Image
+              src="/images/6cd8f9fa642fe.png"
+              alt="브랜드 배경"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            <div className="absolute inset-0 bg-white/60"></div>
+            <div className="relative max-w-4xl mx-auto px-4">
               <div className="flex items-center justify-center">
                 <Image
                   src="/images/21d2d0f214e82.png"
