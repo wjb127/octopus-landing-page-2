@@ -1,9 +1,22 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export default function StoreAtmosphereSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+  }
+  const itemVariants = {
+    hidden: { y: 24, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' as const } }
+  }
+  const zoomInVariants = {
+    hidden: { scale: 0.95, opacity: 0 },
+    visible: { scale: 1, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' as const } }
+  }
   const [currentSlide, setCurrentSlide] = useState(0)
   
   // 매장 이미지들
@@ -38,7 +51,13 @@ export default function StoreAtmosphereSection() {
   return (
     <section className="relative overflow-hidden" id="store-atmosphere">
       {/* 메인 타이틀 섹션 - 황금색 배경 */}
-      <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-500 py-20">
+      <motion.div
+        className="relative bg-gradient-to-r from-yellow-400 to-yellow-500 py-20"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {/* 좌측 원형 로고 이미지 - 모바일에서 숨김 */}
         <div className="hidden md:block absolute left-8 top-1/2 transform -translate-y-1/2 w-32 h-32 md:w-48 md:h-48">
           <Image
@@ -50,27 +69,33 @@ export default function StoreAtmosphereSection() {
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">
+          <motion.div className="max-w-4xl mx-auto" variants={containerVariants}>
+            <motion.h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4" variants={itemVariants}>
               깔끔하고 따뜻한 분위기의
-            </h2>
-            <div className="flex items-center justify-center gap-4 mb-8">
+            </motion.h2>
+            <motion.div className="flex items-center justify-center gap-4 mb-8" variants={itemVariants}>
               <div className="h-1 w-16 md:w-24 bg-red-600"></div>
-              <h3 className="text-4xl md:text-6xl lg:text-7xl font-bold text-red-600">
+              <motion.h3 className="text-4xl md:text-6xl lg:text-7xl font-bold text-red-600" variants={zoomInVariants}>
                 완벽한 쭈꾸미집!
-              </h3>
+              </motion.h3>
               <div className="h-1 w-16 md:w-24 bg-red-600"></div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* 슬라이드 이미지 섹션 */}
-      <div className="relative bg-yellow-400 py-12">
+      <motion.div
+        className="relative bg-yellow-400 py-12"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* 이미지 슬라이더 */}
-            <div className="relative h-80 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <motion.div className="relative h-80 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl" variants={zoomInVariants}>
               {storeImages.map((image, index) => (
                 <div
                   key={index}
@@ -103,29 +128,31 @@ export default function StoreAtmosphereSection() {
               </div>
 
               {/* 이전/다음 버튼 */}
-              <button
+              <motion.button
                 onClick={() => setCurrentSlide((prev) => (prev - 1 + storeImages.length) % storeImages.length)}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-black/30 hover:bg-black/50 rounded-full flex items-center justify-center text-white transition-colors"
+                whileTap={{ scale: 0.9 }}
               >
                 ←
-              </button>
-              <button
+              </motion.button>
+              <motion.button
                 onClick={() => setCurrentSlide((prev) => (prev + 1) % storeImages.length)}
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-black/30 hover:bg-black/50 rounded-full flex items-center justify-center text-white transition-colors"
+                whileTap={{ scale: 0.9 }}
               >
                 →
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
 
             {/* 슬라이드 카운터 */}
-            <div className="text-center mt-6">
+            <motion.div className="text-center mt-6" variants={itemVariants}>
               <span className="text-gray-700 font-medium">
                 {currentSlide + 1} / {storeImages.length}
               </span>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
