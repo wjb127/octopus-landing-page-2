@@ -19,12 +19,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       // PNG 파비콘 (크게 적용되도록 256x256 지정)
-      { url: '/images/f42d41e0e74bc.png', sizes: '256x256', type: 'image/png' },
+      { url: '/images/b8c8b47f618b6.png', sizes: '256x256', type: 'image/png' },
       // 레거시 호환
       { url: '/favicon.ico' }
     ],
     shortcut: '/favicon.ico',
-    apple: '/images/f42d41e0e74bc.png',
+    apple: '/images/b8c8b47f618b6.png',
   },
 };
 
