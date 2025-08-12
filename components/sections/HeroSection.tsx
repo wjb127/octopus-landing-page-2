@@ -198,24 +198,7 @@ export default function HeroSection() {
       </AnimatePresence>
       </ClientOnly>
 
-      {/* Navigation Arrows */}
-      <motion.button
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-        onClick={prevSlide}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <ChevronLeft size={24} />
-      </motion.button>
-
-      <motion.button
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-        onClick={nextSlide}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <ChevronRight size={24} />
-      </motion.button>
+      {/* Navigation Arrows - 숨김 처리 */}
 
       {/* Slide Indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3">
