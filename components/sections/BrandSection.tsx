@@ -50,17 +50,50 @@ export default function BrandSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="mb-16"
+            className="grid lg:grid-cols-2 gap-16 items-center mb-16"
           >
-            <motion.div variants={zoomInVariants} className="flex justify-center">
-              <Image
-                src="/images/3b7f53ca7fee6.png"
-                alt="황금쭈꾸미집 로고와 텍스트"
-                width={1200}
-                height={400}
-                className="w-full max-w-5xl h-auto"
-                priority
-              />
+            {/* Left - 이미지 + 스토리 텍스트 */}
+            <div>
+              <motion.div variants={zoomInVariants} className="flex justify-center">
+                <Image
+                  src="/images/3b7f53ca7fee6.png"
+                  alt="황금쭈꾸미집 로고와 텍스트"
+                  width={1200}
+                  height={400}
+                  className="w-full max-w-5xl h-auto"
+                  priority
+                />
+              </motion.div>
+
+              {/* 스토리 텍스트 */}
+              <motion.div variants={itemVariants} className="mt-8 text-left md:text-center">
+                <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+                  <p className="text-gray-800 font-bold">
+                    <span className="font-bold">2011년</span>, 열정 가득한 청년이 시작한 창업은<br />
+                    보란듯이 <span className="font-bold">실패했습니다.</span>
+                  </p>
+                  <p>
+                    저희는 아주 작은 부분부터 제품, 서비스, 맛까지<br />
+                    수없는 시행착오로 <span className="font-semibold">10년의 세월</span>을 걸어왔습니다.
+                  </p>
+                  <p>
+                    이제는 그 길에서 얻은 노하우로 <span className="text-red-600 font-semibold">황금쭈꾸미집의</span><br />
+                    <span className="text-red-600 font-semibold">새로운 식구들과 함께 더 넓은 곳으로</span> 나아가고 싶습니다.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right - 브랜드 이미지 부활 */}
+            <motion.div variants={zoomInVariants} className="relative">
+              <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/aff99ce23d431.png"
+                  alt="황금쭈꾸미집 브랜드 소개"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </motion.div>
           </motion.div>
 
