@@ -156,7 +156,7 @@ export default function Footer() {
             <div className="text-gray-400 text-sm space-y-1">
               <p>사업자번호 : 754-88-01536   |   대표 : 유지원</p>
               <p>주소 : 대구광역시 수성구 청수로9길 39, 1층(중동)</p>
-              <p>대표번호 & 창업문의 : 1577-6615</p>
+              <p>대표번호 & 창업문의 : 010-7206-0066</p>
             </div>
           </motion.div>
         </div>

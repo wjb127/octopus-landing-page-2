@@ -34,7 +34,7 @@ export default function FloatingPhoneButton() {
   }, [])
 
   const handlePhoneCall = () => {
-    window.location.href = 'tel:1577-6615'
+    window.location.href = 'tel:010-7206-0066'
   }
 
   return (
@@ -66,7 +66,7 @@ export default function FloatingPhoneButton() {
                 className="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 active:scale-95"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                aria-label="전화걸기 1577-6615"
+                aria-label="전화걸기 010-7206-0066"
               >
                 <Phone className="w-6 h-6" />
               </motion.button>
@@ -81,7 +81,7 @@ export default function FloatingPhoneButton() {
               >
                 창업 문의
                 <br />
-                <span className="font-bold">1577-6615</span>
+                <span className="font-bold">010-7206-0066</span>
                 <div className="absolute top-1/2 -right-1 transform -translate-y-1/2 w-2 h-2 bg-black/80 rotate-45"></div>
               </motion.div>
             </motion.div>
