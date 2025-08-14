@@ -25,7 +25,7 @@ export default function FixedBottomForm() {
     try {
       // Supabase에 데이터 저장
       const { error: supabaseError } = await supabase
-        .from('kmong_6_inquiries')
+        .from('kmong_7_inquiries')
         .insert([
           {
             name: formData.name,
