@@ -119,7 +119,7 @@ function getRecipients(): string[] {
     return envList.split(',').map((e) => e.trim()).filter(Boolean)
   }
   // 기본값: 복수 수신자
-  return ['wjb127@naver.com', 'evenros01@naver.com']
+  return ['wjb127@naver.com', 'yjh0990@naver.com']
 }
 
 

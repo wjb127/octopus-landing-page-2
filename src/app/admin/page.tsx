@@ -45,7 +45,7 @@ export default function AdminDashboard() {
   const fetchInquiries = async () => {
     try {
       const { data, error } = await supabase
-        .from('kmong_6_inquiries')
+        .from('kmong_7_inquiries')
         .select('*')
         .order('created_at', { ascending: false })
 
@@ -69,7 +69,7 @@ export default function AdminDashboard() {
 
     try {
       const { error } = await supabase
-        .from('kmong_6_inquiries')
+        .from('kmong_7_inquiries')
         .delete()
         .eq('id', id)
 
